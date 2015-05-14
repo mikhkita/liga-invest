@@ -1,12 +1,15 @@
 
 @font-face {
-	font-family: 'PFL';
-	src: url('../fonts/pdfintextcondpro-light-webfont.eot');
-    src: url('../fonts/pdfintextcondpro-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/pdfintextcondpro-light-webfont.woff') format('woff'),
-         url('../fonts/pdfintextcondpro-light-webfont.ttf') format('truetype');
+    font-family: 'pf_beausans_proregular';
+    src: url('pfbeausanspro-reg-webfont.eot');
+    src: url('pfbeausanspro-reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('pfbeausanspro-reg-webfont.woff2') format('woff2'),
+         url('pfbeausanspro-reg-webfont.woff') format('woff'),
+         url('pfbeausanspro-reg-webfont.ttf') format('truetype'),
+         url('pfbeausanspro-reg-webfont.svg#pf_beausans_proregular') format('svg');
     font-weight: normal;
     font-style: normal;
+
 }
 
 @font-face {
@@ -37,9 +40,9 @@ body {
 body {
 	min-width: 1000px;
 	text-align: center;
-	font-family: 'PFL';
+	font-family: 'pf_beausans_proregular';
 	overflow-x: hidden;
-	color: #472275;
+	color: #ededed;
 }
 a{
 	text-decoration: none;
@@ -97,7 +100,7 @@ input.error,textarea.error{
 }
 .b-block{
 	position: relative;
-	width: 1000px;
+	width: 940px;
 	margin: 0px auto;
 }
 .b-absolute{
@@ -121,7 +124,47 @@ input:-moz-placeholder {
 .b-1{
 	
 }
-	
+	.b-1 img{
+		float: left;
+		width: 180px;
+		margin-left: 15px;
+		margin-bottom: 12px;
+	}
+
+.b-2{
+	background-color: #4493b3;
+}
+	.b-2 .left{
+		background-color: #4595b4;
+		display: inline-block;
+		width: 218px;
+	}
+
+	.b-2 img{
+		float: left;
+		margin-left: 20px;
+		margin-top: 23px;
+		margin-bottom: 17px;
+	}
+
+	.b-2 h2{
+		color: #ededed;
+		float: left;
+		margin-top: 19px;
+		margin-bottom: 17px;
+		margin-left: 11px;
+		text-shadow: 0px 1px 1px #000;
+		font-size: 15px;
+		font-family: 'pf_beausans_proregular';
+	}
+
+	.b-2 h3{
+		float: right;
+	}
+
+	.b-2 h4{
+		float: right;
+	}
 @media screen and (max-width: 1250px){
 	
 }
