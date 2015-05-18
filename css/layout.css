@@ -1,12 +1,12 @@
 
 @font-face {
     font-family: 'pf_beausans_proregular';
-    src: url('pfbeausanspro-reg-webfont.eot');
-    src: url('pfbeausanspro-reg-webfont.eot?#iefix') format('embedded-opentype'),
-         url('pfbeausanspro-reg-webfont.woff2') format('woff2'),
-         url('pfbeausanspro-reg-webfont.woff') format('woff'),
-         url('pfbeausanspro-reg-webfont.ttf') format('truetype'),
-         url('pfbeausanspro-reg-webfont.svg#pf_beausans_proregular') format('svg');
+    src: url('../fonts/pfbeausanspro-reg-webfont.eot');
+    src: url('../fonts/pfbeausanspro-reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pfbeausanspro-reg-webfont.woff2') format('woff2'),
+         url('../fonts/pfbeausanspro-reg-webfont.woff') format('woff'),
+         url('../fonts/pfbeausanspro-reg-webfont.ttf') format('truetype'),
+         url('../fonts/pfbeausanspro-reg-webfont.svg#pf_beausans_proregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -128,43 +128,193 @@ input:-moz-placeholder {
 		float: left;
 		width: 180px;
 		margin-left: 15px;
-		margin-bottom: 12px;
+		margin-bottom: 9px;
+		margin-top: 12px;
 	}
 
 .b-2{
-	background-color: #4493b3;
 }
-	.b-2 .left{
-		background-color: #4595b4;
-		display: inline-block;
-		width: 218px;
+	.b-2 .header{
+		width: 100%;
+		background: linear-gradient(to top, #297ea3, #4e9bba);
+		border-radius: 8px 8px 0px 0px;
+		border-top: 2px solid #a2efff;
 	}
 
-	.b-2 img{
-		float: left;
-		margin-left: 20px;
-		margin-top: 23px;
-		margin-bottom: 17px;
+		.b-2 .header .left{
+			display: inline-block;
+			width: 218px;
+			border-right: 1px solid #2b8ba9;
+		}
+	
+			.b-2 .header .left img{
+				float: left;
+				margin-left: 20px;
+				margin-top: 23px;
+				margin-bottom: 17px;
+			}
+		
+			.b-2 .header .left h2{
+				color: #ededed;
+				float: left;
+				margin-top: 16px;
+				margin-bottom: 13px;
+				margin-left: 12px;
+				text-shadow: 0px 1px 1px #000;
+				font-size: 15px;
+				font-family: 'pf_beausans_proregular';
+			}
+	
+		.b-2 .header .right{
+			width: 720px;
+			border-left: 1px solid #66b6c6;
+			border-radius: 0px 8px 0px 0px;
+		}
+	
+			.b-2 .header .right h3{
+				float: right;
+				padding-top: 16px;
+				padding-right: 20px;
+				padding-bottom: 13px;
+				border-right: 1px solid #2b8ba9;
+				font-family: 'pf_beausans_proregular';
+				font-size: 15px;
+				text-shadow: 0px 1px 1px #000;
+			}
+		
+			.b-2 .header .right h4{
+				float: right;
+				border-left: 1px solid #66b6c6;
+				text-shadow: 0px 1px 1px #000;
+				font-family: 'pf_beausans_proregular';
+				font-size: 15px;
+				padding-top: 16px;
+				padding-right: 54px;
+				padding-bottom: 13px;
+				padding-left: 58px;
+			}
+		
+			.b-2 .header .right img{
+				position: absolute;
+		  		top: 49px;
+		  		right: 241px;
+		
+			}
+
+	.b-2 .content{
+
 	}
 
-	.b-2 h2{
-		color: #ededed;
-		float: left;
-		margin-top: 19px;
-		margin-bottom: 17px;
-		margin-left: 11px;
-		text-shadow: 0px 1px 1px #000;
-		font-size: 15px;
-		font-family: 'pf_beausans_proregular';
-	}
+		.b-2 .content .left{
+			background-color: #429ab8;
+ 			width: 219px;
+ 			padding-top: 19px;
+ 			min-height: 927px;
+ 			border-radius: 0px 0px 0px 10px;
+		}
 
-	.b-2 h3{
-		float: right;
-	}
+			.b-2 .content .left ul{
+				  text-align: left;
+			}
 
-	.b-2 h4{
-		float: right;
-	}
+			.b-2 .content .left li{
+				padding-top: 22px;
+  				padding-bottom: 10px;
+  				padding-left: 15px;
+  				border-bottom: 1px solid #65aec9;
+  				border-top: 1px solid #2b8ba9;
+			}
+
+			.b-2 .content .left li:first-child{
+				border-top: none;
+			}
+
+			.b-2 .content .left li:hover{
+				text-decoration: underline;
+			}
+
+			.b-2 .content .left li:active{
+				background-color: #fff;
+				text-decoration: none;
+				border-top: 1px solid #2b8ba9;
+				border-left: 1px solid #2b8ba9;
+				border-bottom: 1px solid #50afcf;
+				margin-left: 15px;
+			}
+
+				.b-2 .content .left a{
+					color: #fff;
+				}
+
+				.b-2 .content .left li:active > a{
+					color: #423f3f;
+					text-decoration: none;
+				}
+
+			.b-2 .content .left div{
+				margin-top: 3px;
+  				margin-right: 11px;
+  				width: 8px;
+  				height: 12px;
+  				float: left;
+  				background-image: url('../i/1.png');
+			}
+
+			.b-2 .content .left .1img{
+				background-image: url('../i/1.png');
+				width: 20px;
+				height: 20px;
+			}	
+
+			.b-2 .content .left .2img{
+				background-image: url('../i/1.png');
+				width: 20px;
+				height: 20px;
+			}
+
+			.b-2 .content .left .3img{
+				background-image: url('../i/1.png');
+				width: 20px;
+				height: 20px;
+			}
+
+			.b-2 .content .left .4img{
+				background-image: url('../i/1.png');
+				width: 20px;
+				height: 20px;
+			}
+
+			.b-2 .content .left .5img{
+				background-image: url('../i/1.png');
+				width: 20px;
+				height: 20px;
+			}
+
+			.b-2 .content .left .6img{
+				background-image: url('../i/1.png');
+				width: 20px;
+				height: 20px;
+			}
+
+			.b-2 .content .left .7img{
+				background-image: url('../i/1.png');
+				width: 20px;
+				height: 20px;
+			}
+
+			.b-2 .content .left .8img{
+				background-image: url('../i/1.png');
+				width: 20px;
+				height: 20px;
+			}	
+						
+			.b-2 .content .left .9img{
+				background-image: url('../i/1.png');
+				width: 20px;
+				height: 20px;
+			}
+
+
 @media screen and (max-width: 1250px){
 	
 }
