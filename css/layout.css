@@ -163,6 +163,14 @@ input:-moz-placeholder {
 .b-1{
 	
 }
+
+	.b-1 .index{
+		float: none;
+		width: 180px;
+		margin-left: 5px;
+		margin-bottom: 9px;
+		margin-top: 12px;
+	}
 	.b-1 img{
 		float: left;
 		width: 180px;
@@ -171,8 +179,27 @@ input:-moz-placeholder {
 		margin-top: 12px;
 	}
 
+	
+
 .b-2{
 }
+
+	.b-2 .index{
+		padding-top: 10px;
+  		padding-bottom: 10px;
+		width: 207px;
+  		margin-left: 380px;
+  		text-align: left;
+	}
+		
+		.b-2 .index a{
+			  color: #0080bb;
+		}
+	
+		.b-2 .index li{
+			  padding: 2px 0px 2px 0px;
+		}
+	
 	.b-2 .header{
 		width: 100%;
 		background: linear-gradient(to top, #297ea3, #4e9bba);
@@ -211,7 +238,7 @@ input:-moz-placeholder {
 			}
 	
 		.b-2 .header .right{
-			width: 720px;
+			width: 719px;
 			border-left: 1px solid #66b6c6;
 			border-radius: 0px 8px 0px 0px;
 		}
@@ -241,7 +268,7 @@ input:-moz-placeholder {
 		
 			.b-2 .header .right img{
 				position: absolute;
-		  		top: 49px;
+		  		top: 48px;
 		  		right: 241px;
 		
 			}
@@ -250,16 +277,14 @@ input:-moz-placeholder {
 			background-color: #429ab8;
  			width: 219px;
  			padding-top: 19px;
- 			min-height: 927px;
  			border-radius: 0px 0px 0px 8px;
  			text-align: left;
 		}
 
 			.b-2 .b-menu li{
 				padding-top: 22px;
-  				padding-bottom: 10px;
+  				padding-bottom: 14px;
   				padding-left: 15px;
-  				border-bottom: 1px solid #65aec9;
   				border-top: 1px solid #2b8ba9;
 			}
 
@@ -275,9 +300,6 @@ input:-moz-placeholder {
 				background-color: #fff;
 				text-decoration: none;
 				border-top: 1px solid #2b8ba9;
-				border-left: 1px solid #2b8ba9;
-				border-bottom: 1px solid #50afcf;
-				margin-left: 15px;
 			}
 
 			.b-2 .b-menu li.active + li{
@@ -348,7 +370,7 @@ input:-moz-placeholder {
 			.b-2 .b-menu .expense-type.active{
 				text-decoration: none;
 				border: none;
-				padding-left: 28px;
+				padding-left: 42px;
 				color: #2a2a2a 
 			}
 
@@ -446,7 +468,6 @@ input:-moz-placeholder {
 
 		.b-2 .content{
 			background-color: #fff;
-			min-height: 927px;
 			width: 685px;
 			text-align: left;
 			padding: 16px 18px 0px 17px;
@@ -463,6 +484,7 @@ input:-moz-placeholder {
 			.b-2 .content iframe{
 				border: 1px solid #c0c6cc;
 				margin-bottom: 8px;
+				margin-top: 10px;
 			}
 
 			.b-2 .content .right{
@@ -487,6 +509,7 @@ input:-moz-placeholder {
 			.b-2 .content a{
 				padding: 7px 12px 8px 10px;
 				margin-top: 20px;
+				margin-bottom: 20px;
 				display: inline-block;
 			}
 
@@ -597,11 +620,12 @@ input:-moz-placeholder {
 					}
 	
 					.b-2 .pasport input[type='text']{
-					  	width: 296px;
-	  					height: 20px;
-	  					border-radius: 2px;
-	  					border: none;
-	  					box-shadow: inset 0px 0px 3.9px 1px #ccc;
+					  	width: 292px;
+  						height: 12px;
+  						padding: 4px;
+  						border-radius: 2px;
+  						border: none;
+  						box-shadow: inset 0px 0px 3.9px 1px #ccc;
 					}
 	
 					.b-2 .pasport .pasp{
@@ -611,7 +635,7 @@ input:-moz-placeholder {
 					}
 	
 					.b-2 .pasport .number{
-						max-width: 170px;
+						max-width: 157px;
 					}
 	
 					.b-2 .pasport .number-text{
@@ -628,7 +652,7 @@ input:-moz-placeholder {
 					}
 	
 					.b-2 .pasport .cod{
-						max-width: 72px;
+						max-width: 60px;
 					}
 	
 					.b-2 .pasport .cod-text{
@@ -657,7 +681,8 @@ input:-moz-placeholder {
 
 					.b-2 .telephone input[type='text']{
 					  	width: 170px;
-	  					height: 20px;
+	  					height: 12px;
+	  					padding: 4px;
 	  					border-radius: 2px;
 	  					border: none;
 	  					box-shadow: inset 0px 0px 3.9px 1px #ccc;
@@ -701,18 +726,25 @@ input:-moz-placeholder {
 					}
 
 					.b-2 .agreement .readme{
-						width: 682px;
+						width: 672px;
 						height: 116px;
 						border-radius: 2px;
 						border: 1px solid	#adadad;
 						margin-top: 10px;
 						overflow-y: scroll;
-						padding: 5px;
+						padding: 10px;
 						box-shadow: inset 0px 0px 3px 1px #ccc;
 					}
 
 					.b-2 .agreement a{
 						float: right;
+					}
+
+					.b-2 .map{
+						width: 682px;
+  						height: 255px;
+  						border: 1px solid #999;
+  						margin-bottom: 20px;
 					}
 
 		.b-2 .support{
@@ -728,13 +760,14 @@ input:-moz-placeholder {
 
 			.b-2 .support textarea{
 				margin-top: 37px;
-  				width: 441px;
-  				resize: none;
-  				height: 119px;
-  				padding: 5px;
-  				box-shadow: inset 0px 0px 4px 1px #ccc;
-  				border-radius: 1px;
-  				font-family: 'pf_beausans_proregular';
+ 				width: 435px;
+ 				border: 1px solid #c3c3c3;
+ 				resize: none;
+ 				height: 119px;
+ 				padding: 10px;
+ 				box-shadow: inset 0px 0px 4px 1px #ccc;
+ 				border-radius: 3px;
+ 				font-family: 'pf_beausans_proregular';
 			}
 
 			.b-2 .support a{
@@ -750,7 +783,7 @@ input:-moz-placeholder {
   			background-color: #ededed;
   			margin-right: -19px;
   			margin-top: -16px;
-  			min-height: 947px;
+  			min-height: 530px;
   			border-radius: 0px 0px 8px 0px;
   			text-align: center;
 		}
@@ -822,12 +855,13 @@ input:-moz-placeholder {
 
 				.b-2 .pay input[type="text"]{
 					border-radius: 3px;
-					border: 1px solid #b6bbc1;
-					box-shadow: inset 0px 0px 3px 1px #ccc;
-					margin-right: 9px;
-					height: 15px;
-					margin-top: 15px;
-					padding: 2px;
+					width: 160px;
+  					border: 1px solid #b6bbc1;
+  					box-shadow: inset 0px 0px 3px 1px #ccc;
+  					margin-right: 9px;
+  					height: 13px;
+  					margin-top: 15px;
+  					padding: 4px;
 				}
 
 				.b-2 .pay .types{
@@ -887,13 +921,13 @@ input:-moz-placeholder {
 
 				.b-2 .content .investition-program input[type="text"]{
 					width: 130px;
-	  				height: 20px;
-	  				border-radius: 2px;
-	  				padding: 2px;
-	  				border: none;
-	  				margin-top: 13px;
-	  				margin-bottom: 45px;
-	  				box-shadow: inset 0px 0px 3.9px 1px #ccc;
+  					height: 18px;
+  					border-radius: 2px;
+  					padding: 4px;
+  					border: none;
+  					margin-top: 13px;
+  					margin-bottom: 45px;
+  					box-shadow: inset 0px 0px 3.9px 1px #ccc;
 
 				}
 
@@ -969,7 +1003,6 @@ input:-moz-placeholder {
 
 		.b-2 .content .b-green{
 			margin-top: -47px;
-			margin-right: 55px;
 		}
 
 		.b-2 .content .b-green:active{
@@ -985,7 +1018,8 @@ input:-moz-placeholder {
 
 		.b-2 .content .adress{
 			text-align: left;
-			width: 630px;
+			width: 682px;
+			margin-bottom: 30px;
 		}
 
 			.b-2 .content .adress h4{
@@ -1003,6 +1037,153 @@ input:-moz-placeholder {
 			.b-2 .content .adress .right-p{
 				text-align: right;
 			}
+
+			.b-2 .content .e-mail-password h3{
+
+			}
+
+			.b-2 .content .e-mail-password h2{
+				width: 150px;
+			}
+
+			.b-2 .content .e-mail-password input[type="text"]{
+				height: 12px;
+  				padding: 4px;
+  				border-radius: 2px;
+  				border: none;
+  				box-shadow: inset 0px 0px 3.9px 1px #ccc;	
+			}
+
+			.b-2 .content .e-mail-password a{
+				float: right;
+			}
+
+			.b-2 table{
+
+			}
+
+			.b-2 tr{
+
+			}
+
+			.b-2 td{
+				font-size: 14px;
+  				color: #777;
+  				height: 40px;
+  				text-align: center;
+  				width: 135px;
+  				border: 1px solid #d2d2d2;
+			}
+
+			.b-2 .table-a{
+				font-size: 13px;
+  				color: #1E272B;
+  				font-family: 'pf_beausans_probbook';
+			}
+
+			.b-2 .table-a:hover{
+				text-decoration: underline;
+			}
+
+			.b-2 b{
+				color: #216325;
+			}
+
+
+			.b-2 .grey-b{
+				color: #828181;
+			}
+
+			.b-2 .structure{
+				margin-top: 15px;
+			}
+	
+				.b-2 .structure h6{
+					font-size: 15px;
+					color: #2E2828;
+					margin-right: 10px;
+				}
+	
+				.b-2 .structure .struc-a{
+					font-family: 'pf_bague_sans_probold';
+					font-size: 16px;
+					padding: 0px;
+					margin: 0px;
+					color: #2E2828;
+				}
+
+				.b-2 .structure .struc-a:hover{
+					text-decoration: underline;
+				}
+
+				.b-2 .structure .struc-button {
+					margin: 0px 16px 0px 3px;
+				}
+
+				.b-2 .structure .struc-button:active{
+					margin-top: 2px;
+					margin-bottom: -2px;
+				}
+
+			.b-2 .referal-a{
+				padding: 10px;
+				background-color: #f3f3f3;
+				margin-bottom: 30px;
+				margin-top: 30px;
+			}
+
+				.b-2 .referal-a h5{
+					font-size: 15px;
+					color: #2E2828;
+					margin-right: 10px;
+				}
+
+				.b-2 .referal-a .copy-button{
+					float: right;
+					margin: 0px;
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+
+				.b-2 .referal-a .ref-a{
+					padding: 0px;
+					margin: 0px;
+					font-family: 'pf_bague_sans_probold';
+					color: #2A272E;
+				}
+
+				.b-2 .referal-a .ref-a:hover{
+					text-decoration: underline;
+				}
+
+				.b-2 .referal-a .copy-button:active{
+					margin-top: 12px;
+					margin-bottom: 8px;
+				}
+
+			.b-2 .news{
+				padding-top: 15px;
+				padding-bottom: 15px;
+				border-bottom: 1px solid #2b8ba9;
+			}
+
+			.b-2 .news h4{
+				font-family: 'pf_bague_sans_probold';
+  				font-size: 20px;
+  				color: #52505e;
+  				margin-bottom: 10px;
+			}
+
+			.b-2 .news h5{
+				font-family: 'pf_bague_sans_prolight';
+  				font-size: 15px;
+  				color: #2b8ba9;
+			}
+
+			.b-2 .news a{
+				margin: 0px;
+			}
+			
 
 @media screen and (max-width: 1250px){
 	
