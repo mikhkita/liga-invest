@@ -479,7 +479,7 @@ input:-moz-placeholder {
 				color: #429ab8;
 			}
 
-			.b-2 .content .right h3{
+			.b-2 .content .right .right-h3{
 				color: #696a6b;
 				font-size: 15px;
 			}
@@ -573,6 +573,10 @@ input:-moz-placeholder {
 					margin-top: 30px;
 				}
 
+				.b-2 .content .new-investition:active{
+					margin-top: 32px;
+				}
+
 				.b-2 .pasport{
 					margin-top: 55px;
 					width: 380px;
@@ -637,12 +641,13 @@ input:-moz-placeholder {
 					margin-top: 55px;
 				}
 
-					.b-2 .telephone h3{
+					.b-2 .telephone .telephone-h3{
 						font-family: 'pf_beausans_probbook';
 						font-size: 15px;
 						color: #4a4857;
 						text-align: left;
 						margin-bottom: 12px;
+						margin-top: 0px;
 					}
 
 					.b-2 .content .telephone h2{
@@ -658,7 +663,7 @@ input:-moz-placeholder {
 	  					box-shadow: inset 0px 0px 3.9px 1px #ccc;
 					}
 
-					.b-2 .telephone p{
+					.b-2 .telephone .telephone-p{
 						font-size: 10px;
 						color: #797979;
 						width: 220px;
@@ -948,6 +953,56 @@ input:-moz-placeholder {
 					margin-top: -43px;
 				}
 
+		.b-2 .content h3{
+			font-family: 'pf_bague_sans_probold';
+			font-size: 20px;
+			color: #52505e;
+			margin-top: 30px;
+			margin-bottom: 20px;
+		}
+	
+		.b-2 .content .agreement-p{
+			font-size: 15px;
+			color: #696a6b;
+			margin-bottom: 65px;
+		}
+
+		.b-2 .content .b-green{
+			margin-top: -47px;
+			margin-right: 55px;
+		}
+
+		.b-2 .content .b-green:active{
+			margin-top: -45px;
+		}
+
+		.b-2 .content img{
+			width: 630px;
+			height: 270px;
+			border-bottom: 1px solid #bcc2c8;
+			margin-bottom: 7px;
+		}
+
+		.b-2 .content .adress{
+			text-align: left;
+			width: 630px;
+		}
+
+			.b-2 .content .adress h4{
+				font-family: 'pf_bague_sans_probold';
+				font-size: 15px;
+				color: #4a4857;
+				margin-bottom: 5px;
+			}
+
+			.b-2 .content .adress p{
+				font-size: 15px;
+				color: #4d5056;
+			}
+
+			.b-2 .content .adress .right-p{
+				text-align: right;
+			}
 
 @media screen and (max-width: 1250px){
 	
