@@ -833,21 +833,119 @@ input:-moz-placeholder {
 
 
 				.b-2 .pay .radio-button{
-					margin-top: 21px;
 					float: right;
 					text-align: left;
 					color: #4d5056
 				}
 
 				.b-2 .pay .radio-button input[type="radio"]{
+					margin-right: 6px;
+				}
 
+				.b-2 .pay .radio-button .but1{
+					margin-top: 17px;
+				}
+
+				.b-2 .pay .radio-button .but2{
+					margin-top: -13px;
+				}
+
+				.b-2 .pay .radio-button .pay-online{
+					margin-top: 17px;
+				}
+
+				.b-2 .pay .radio-button .pay-office{
+					margin-top: -13px;
 				}
 
 				.b-2 .pay .radio-button h6{
-					margin-top: 9px;
+					width: 206px;
 					color: #4d5056;
 					font-size: 13px;
 					margin-left: 10px;
+				}
+
+			.b-2 .content .investition-program{
+				background-color: #f5f4f4;
+				border: 1px solid #b6bbc1;
+				border-top: none;
+			}
+
+				.b-2 .content .investition-program h4{
+					color: #4d5056;
+					font-size: 15px;
+					margin-top: 14px;
+					margin-left: 20px;
+					margin-right: 9px;
+					margin-bottom: 50px;
+				}
+
+				.b-2 .content .investition-program input[type="text"]{
+					width: 130px;
+	  				height: 20px;
+	  				border-radius: 2px;
+	  				padding: 2px;
+	  				border: none;
+	  				margin-top: 13px;
+	  				margin-bottom: 45px;
+	  				box-shadow: inset 0px 0px 3.9px 1px #ccc;
+
+				}
+
+
+				.b-2 .content .investition-program img{
+					height: 168px;
+					width: 305px;
+					margin-bottom: 21px;
+				}
+
+					.b-2 .content .investition-program .car-left{
+						margin-left: 25px;
+					}
+
+					.b-2 .content .investition-program .car-right{
+						margin-right: 25px;
+					}
+
+				.b-2 .content .investition-program h5{
+					font-family: 'pf_beausans_probbook';
+					font-size: 15px;
+					color: #4d5056;
+				}
+
+				.b-2 .content .investition-program h6{
+					color: #4d5056;
+					font-size: 15px;
+					margin-left: 20px;
+					margin-right: 9px;					
+				}
+				.b-2 .content .investition-program .putin{
+					margin-top: 20px;
+					margin-bottom: 30px;
+				}
+
+				.b-2 .content .investition-program a{
+					padding: 0px;
+					margin-top: 0px;
+					font-size: 13px;
+					text-decoration: underline;
+					color: #429ab8;
+				}
+
+				.b-2 .content .investition-program a:hover{
+					text-decoration: none;
+				}
+
+				.b-2 .content .investition-program .green{
+					text-decoration: none;
+					color: #fff;
+					padding: 7px 12px 8px 10px;
+					margin-right: 25px;
+					margin-top: -45px;
+				}
+
+				.b-2 .content .investition-program .green:active{
+					margin-top: -43px;
 				}
 
 
