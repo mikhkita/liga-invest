@@ -470,7 +470,7 @@ input:-moz-placeholder {
 			background-color: #fff;
 			width: 685px;
 			text-align: left;
-			padding: 16px 18px 0px 17px;
+			padding: 16px 18px 17px 17px;
 			border-radius: 0px 0px 8px 0px;
 
 		}
@@ -482,9 +482,6 @@ input:-moz-placeholder {
 			}
 
 			.b-2 .content iframe{
-				border: 1px solid #c0c6cc;
-				margin-bottom: 8px;
-				margin-top: 10px;
 			}
 
 			.b-2 .content .right{
