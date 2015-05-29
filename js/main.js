@@ -22,6 +22,12 @@ $(document).ready(function(){
         
     });
 
+     var title = window.location.href,
+        titleVar = 2;
+    title = title.split(/[\/#?]+/);
+    title = title[titleVar];
+    $("li[data-name='"+title+"']").addClass("active");
+
 //     function copy_clip(meintext)
 // {
 //  if (window.clipboardData) {
