@@ -49,7 +49,7 @@
             <div class="clearfix" style="display:table;">
                 <div class="menu-cont">
                     <ul class="b-menu">
-                        <li class="clearfix b-menu-instruction active" data-name="instruction"><a href="/instruction"><div class="b-menu-img"></div>Инструкция</a></li>                        
+                        <li class="clearfix b-menu-instruction" data-name="instruction"><a href="/instruction"><div class="b-menu-img"></div>Инструкция</a></li>                        
                         <li class="clearfix b-menu-news" data-name="news"><a href="/news"><div class="b-menu-img"></div>Новости</a></li>
                         <!-- <li class="clearfix b-menu-expense"><a href="#"><div class="b-menu-img"></div>Мой счет</a></li> -->
                         <li class="clearfix b-menu-expense" data-name="investition"><a href="/investition"><div class="b-menu-img"></div>Инвестировать</a></li>

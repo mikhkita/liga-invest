@@ -17,7 +17,7 @@ class InstructionController extends Controller
 				'roles'=>array('manager'),
 			),
 			array('allow',
-				'actions'=>array('index'),
+				'actions'=>array('index','redirect'),
 				'roles'=>array('manager'),
 			),
 			array('deny',
@@ -26,6 +26,9 @@ class InstructionController extends Controller
 		);
 	}
 
+	public function actionRedirect() {
+		header('Location: /instruction');
+	}
 	public function actionAdminCreate()
 	{
 		$model=new Settings;
