@@ -1,14 +1,14 @@
 $(document).ready(function(){
 
-    function resize(){
-        var height = $(".b-menu").parent(".left").parent("div").height();
-        $(".b-menu").css("height",height-19);
-    }
-    resize();
+    // function resize(){
+    //     var height = $(".b-menu").parent(".left").parent("div").height();
+    //     $(".b-menu").css("height",height-19);
+    // }
+    // resize();
 
-    setTimeout(resize,1000);
+    // setTimeout(resize,1000);
 
-    $(window).resize(resize);
+    // $(window).resize(resize);
 
     $("select[name='investition']").change(function(){
         var program = $("select[name='investition'] option:selected").val();

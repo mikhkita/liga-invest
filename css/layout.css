@@ -1,4 +1,4 @@
-
+  
 @font-face {
     font-family: 'pf_beausans_proregular';
     src: url('../fonts/pfbeausanspro-reg-webfont.eot');
@@ -272,9 +272,12 @@ input:-moz-placeholder {
 		  		top: 47px;
 		  		right: 241px;
 			}
-
-		.b-2 .b-menu{
+		.b-2 .menu-cont{
+			display: table-cell;
 			background-color: #429ab8;
+			vertical-align: top;
+		}
+		.b-2 .b-menu{
  			width: 219px;
  			padding-top: 19px;
  			text-align: left;
@@ -474,13 +477,14 @@ input:-moz-placeholder {
 				background-image: url('../i/10.png');
 			}
 				
-
 		.b-2 .content{
 			background-color: #fff;
 			width: 685px;
 			text-align: left;
 			padding: 16px 18px 17px 17px;
 			border-radius: 0px 0px 8px 0px;
+			display: table-cell;
+			vertical-align: top;
 
 		}
 
