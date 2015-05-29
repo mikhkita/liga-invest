@@ -217,7 +217,6 @@ input:-moz-placeholder {
 		.b-2 .header .left{
 			display: inline-block;
 			width: 218px;
-			border-right: 1px solid #2b8ba9;
 		}
 	
 			.b-2 .header .left img{
@@ -240,7 +239,7 @@ input:-moz-placeholder {
 			}
 	
 		.b-2 .header .right{
-			width: 719px;
+			width: 720px;
 			border-left: 1px solid #66b6c6;
 			border-radius: 0px 8px 0px 0px;
 		}
@@ -492,6 +491,8 @@ input:-moz-placeholder {
 			}
 
 			.b-2 .content iframe{
+				width: 685px;
+				height: 420px;
 			}
 
 			.b-2 .content .b-bonus-cont{
@@ -968,11 +969,11 @@ input:-moz-placeholder {
   					box-shadow: inset 0px 0px 3.9px 1px #ccc;
 				}
 
-
-				.b-2 .content .investition-program img{
-					height: 168px;
-					width: 305px;
+				#program {
 					margin-bottom: 21px;
+				}
+				.b-2 .content .investition-program img{
+					width: 305px;
 				}
 
 					.b-2 .content .investition-program .car-left{
@@ -990,6 +991,13 @@ input:-moz-placeholder {
 						background-color: #FFF;
 						border: 1px solid #b6bbc1;
   						box-shadow: inset 0px 0px 3px 1px #ccc;
+					}
+					#program.no-image img {
+						display: none;
+					}
+					#program.no-image div {
+						width: 633px;
+						margin-left: 25px;
 					}
 
 				.b-2 .content .investition-program h5{
@@ -1056,12 +1064,12 @@ input:-moz-placeholder {
 			margin-top: -45px;
 		}
 
-		.b-2 .content img{
+		/*.b-2 .content img{
 			width: 630px;
 			height: 270px;
 			border-bottom: 1px solid #bcc2c8;
 			margin-bottom: 7px;
-		}
+		}*/
 
 		.b-2 .content .adress{
 			text-align: left;

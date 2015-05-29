@@ -49,20 +49,16 @@
             <div class="clearfix">
                 <div class="left">
                     <ul class="b-menu">
-                        <?foreach ($this->adminMenu["items"] as $i => $menuItem):?>
-                            <? if( $menuItem->code=="inst" ): ?>
-                                <li data-name="<?=$menuItem->code?>" class="clearfix b-menu-instruction"><div class="b-menu-img"></div><a href="<?php echo $this->createUrl('/'.$menuItem->code.'/Index')?>"><?=$menuItem->name?></a></li>
-                            <?endif;?>
-                        <?endforeach;?>
-                       <!--  <li class="clearfix b-menu-instruction active"><div class="b-menu-img"></div><a href="#">Инструкция</a></li>                        
-                        <li class="clearfix b-menu-news"><div class="b-menu-img"></div><a href="#">Новости</a></li>
-                        <li class="clearfix b-menu-expense"><div class="b-menu-img"></div><a href="#">Мой счет</a></li>
-                        <li class="clearfix b-menu-agreement"><div class="b-menu-img"></div><a href="#">Договора</a></li>
-                        <li class="clearfix b-menu-data"><div class="b-menu-img"></div><a href="#">Мои данные</a></li>
-                        <li class="clearfix b-menu-referrals"><div class="b-menu-img"></div><a href="#">Мои рефералы</a></li>
-                        <li class="clearfix b-menu-settings"><div class="b-menu-img"></div><a href="#">Настройки кабинета</a></li>
-                        <li class="clearfix b-menu-support"><div class="b-menu-img"></div><a href="#">Служба поддержки</a></li>
-                        <li class="clearfix b-menu-exit"><div class="b-menu-img"></div><a href="#">Выход</a></li>   -->                     
+                        <li class="clearfix b-menu-instruction active"><a href="#"><div class="b-menu-img"></div>Инструкция</a></li>                        
+                        <li class="clearfix b-menu-news"><a href="#"><div class="b-menu-img"></div>Новости</a></li>
+                        <li class="clearfix b-menu-expense"><a href="#"><div class="b-menu-img"></div>Мой счет</a></li>
+                        <li class="clearfix b-menu-expense"><a href="#"><div class="b-menu-img"></div>Инвестировать</a></li>
+                        <li class="clearfix b-menu-agreement"><a href="#"><div class="b-menu-img"></div>Договора</a></li>
+                        <li class="clearfix b-menu-data"><a href="#"><div class="b-menu-img"></div>Мои данные</a></li>
+                        <li class="clearfix b-menu-referrals"><a href="#"><div class="b-menu-img"></div>Мои рефералы</a></li>
+                        <li class="clearfix b-menu-settings"><a href="#"><div class="b-menu-img"></div>Настройки кабинета</a></li>
+                        <li class="clearfix b-menu-support"><a href="#"><div class="b-menu-img"></div>Служба поддержки</a></li>
+                        <li class="clearfix b-menu-exit"><a href="#"><div class="b-menu-img"></div>Выход</a></li>                       
                     </ul>
                 </div>
                 <div class="right content">

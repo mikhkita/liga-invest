@@ -129,12 +129,19 @@ $(document).ready(function(){
     }
 
     function bindForm($form){
+        var reDate = /^[0-3]\d\.[0-1]\d\.20\d\d$/,
+        teDate = '99.99.9999';  
+
+        $.validator.addMethod('customDate', function (value) {
+            return reDate.test(value);
+        });
         $form.validate({
             ignore: "",
             rules: {
                 "Engine[horsepower]": {
                     number: true
-                }
+                },
+                 'News[date]': "customDate"
             },
             messages: {
                 "Engine[horsepower]": {
@@ -142,6 +149,9 @@ $(document).ready(function(){
                 }
             }
         });
+        if( $form.find("input[name='News[date]']").length ){
+            $form.find("input[name='News[date]']").mask(teDate,{placeholder:"_"});
+        }
         $form.submit(function(e,a){
             tinymce.triggerSave();
             if( $(this).valid() && !$(this).find("input[type=submit]").hasClass("blocked") ){

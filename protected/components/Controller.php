@@ -123,7 +123,7 @@ class Controller extends CController
         $this->settings = array();
 
         foreach ($model as $param) {
-            $this->settings[$param->code] = $param->value;
+            $this->settings[mb_strtoupper($param->code,"UTF-8")] = $param->value;
         }
     }
 
@@ -142,5 +142,16 @@ class Controller extends CController
     public function getMenuCodes(){
         $model = Page::model()->findAllByPk(array(1,2),array("order"=>"pag_id ASC"));
         return $model;
+    }
+
+    public function replaceImage($new_folder, $old_folder){
+        if($new_folder!=$old_folder) {
+            if(file_exists($old_folder)) unlink($old_folder);
+            if($new_folder!="") {
+                $temp = $new_folder;
+                $new_folder = str_replace(Yii::app()->params['tempFolder'], Yii::app()->params['imageFolder'], $temp);
+                rename($temp,$new_folder);
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@
 
 class SettingsController extends Controller
 {
+
 	public function filters()
 	{
 		return array(
@@ -48,6 +49,8 @@ class SettingsController extends Controller
 		if(isset($_POST['Settings']))
 		{
 			$model->attributes=$_POST['Settings'];
+			if($_POST['Settings']['code']=="ANKETA")
+				$this->replaceImage($_POST['Settings']['value'],$model->value);
 			if($model->save())
 				$this->actionAdminIndex(true);
 		}else{
@@ -69,28 +72,16 @@ class SettingsController extends Controller
 		if( !$partial ){
 			$this->layout='admin';
 		}
-		$filter = new Settings('filter');
 		$criteria = new CDbCriteria();
 
-		if (isset($_GET['Settings']))
-        {
-            $filter->attributes = $_GET['Settings'];
-            foreach ($_GET['Settings'] AS $key => $val)
-            {
-                if ($val != '')
-                {
-                    $criteria->addSearchCondition($key, $val);
-                }
-            }
-        }
-
         $criteria->order = 'sort ASC';
+
+        $criteria->condition = 'code="TITLE" OR code="DESCRIPTION" OR code="KEYWORDS" OR code="ANKETA"';
   
 		$model = Settings::model()->findAll($criteria);
 
 		$option = array(
 			'data'=>$model,
-			'filter'=>$filter,
 			'labels'=>Settings::attributeLabels()
 		);
 		if( !$partial ){

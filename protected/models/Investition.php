@@ -1,23 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "inst".
+ * This is the model class for table "investition".
  *
- * The followings are the available columns in table 'inst':
+ * The followings are the available columns in table 'investition':
  * @property string $id
  * @property string $name
- * @property string $value
- * @property string $code
- * @property integer $sort
+ * @property string $image
+ * @property string $text
  */
-class Inst extends CActiveRecord
+class Investition extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'inst';
+		return 'investition';
 	}
 
 	/**
@@ -28,12 +27,12 @@ class Inst extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, code, sort', 'required'),
-			array('sort', 'numerical', 'integerOnly'=>true),
-			array('name, value, code', 'length', 'max'=>255),
+			array('name', 'required'),
+			array('name, image', 'length', 'max'=>255),
+			array('text', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, value, code, sort', 'safe', 'on'=>'search'),
+			array('id, name, image, text', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,9 +54,9 @@ class Inst extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Параметр',
-			'value' => 'Код',
-			'code' => 'Значение',
+			'name' => 'Название',
+			'image' => 'Изображение',
+			'text' => 'Текст',
 		);
 	}
 
@@ -81,9 +80,8 @@ class Inst extends CActiveRecord
 
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('value',$this->value,true);
-		$criteria->compare('code',$this->code,true);
-		$criteria->compare('sort',$this->sort);
+		$criteria->compare('image',$this->image,true);
+		$criteria->compare('text',$this->text,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -94,7 +92,7 @@ class Inst extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Inst the static model class
+	 * @return Investition the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

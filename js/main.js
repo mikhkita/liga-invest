@@ -10,6 +10,18 @@ $(document).ready(function(){
 
     $(window).resize(resize);
 
+    $("select[name='investition']").change(function(){
+        var program = $("select[name='investition'] option:selected").val();
+        if($("div[data-id='"+program+"'] img").length) {
+            $("#program img").attr("src",$("div[data-id='"+program+"'] img").attr("src"));
+            $("#program").removeClass("no-image");
+        } else {
+            $("#program").addClass("no-image");
+        }
+        $("#program div").text($("div[data-id='"+program+"'] div").text());
+        
+    });
+
 //     function copy_clip(meintext)
 // {
 //  if (window.clipboardData) {

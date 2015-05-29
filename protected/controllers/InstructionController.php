@@ -1,6 +1,6 @@
 <?php
 
-class InstController extends Controller
+class InstructionController extends Controller
 {
 	public function filters()
 	{
@@ -17,8 +17,8 @@ class InstController extends Controller
 				'roles'=>array('manager'),
 			),
 			array('allow',
-				'actions'=>array('Index'),
-				'roles'=>array('root'),
+				'actions'=>array('index'),
+				'roles'=>array('manager'),
 			),
 			array('deny',
 				'users'=>array('*'),
@@ -28,11 +28,11 @@ class InstController extends Controller
 
 	public function actionAdminCreate()
 	{
-		$model=new Inst;
+		$model=new Settings;
 
-		if(isset($_POST['Inst']))
+		if(isset($_POST['Settings']))
 		{
-			$model->attributes=$_POST['Inst'];
+			$model->attributes=$_POST['Settings'];
 			if($model->save()){
 				$this->actionAdminIndex(true);
 				return true;
@@ -49,9 +49,9 @@ class InstController extends Controller
 	{
 		$model=$this->loadModel($id);
 
-		if(isset($_POST['Inst']))
+		if(isset($_POST['Settings']))
 		{
-			$model->attributes=$_POST['Inst'];
+			$model->attributes=$_POST['Settings'];
 			if($model->save())
 				$this->actionAdminIndex(true);
 		}else{
@@ -76,11 +76,12 @@ class InstController extends Controller
 		$criteria = new CDbCriteria();
 
         $criteria->order = 'sort ASC';
+        $criteria->condition = 'code="INST_TITLE" OR code="INST_VIDEO"';
   
-		$model = Inst::model()->findAll($criteria);
+		$model = Settings::model()->findAll($criteria);
 		$option = array(
 			'data'=>$model,
-			'labels'=>Inst::attributeLabels()
+			'labels'=>Settings::attributeLabels()
 		);
 		if( !$partial ){
 			$this->render('adminIndex',$option);
@@ -94,21 +95,23 @@ class InstController extends Controller
 		if( !$partial ){
 			$this->layout='site';
 		}
-  
-		$model = Inst::model()->findAll();
+  		$criteria = new CDbCriteria();
+
+        $criteria->condition = 'code="INST_TITLE" OR code="INST_VIDEO"';
+		$model = Settings::model()->findAll($criteria);
 		$option = array(
 			'data'=>$model,
-			'labels'=>Inst::attributeLabels()
+			'labels'=>Settings::attributeLabels()
 		);
 		if( !$partial ){
-			$this->render('Index',$option);
+			$this->render('index',$option);
 		}else{
-			$this->renderPartial('Index',$option);
+			$this->renderPartial('index',$option);
 		}
 	}
 	public function loadModel($id)
 	{
-		$model=Inst::model()->findByPk($id);
+		$model=Settings::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

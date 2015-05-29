@@ -11,7 +11,7 @@ var customHandlers = [];
 $(document).ready(function(){	
 	var rePhone = /^\+\d \(\d{3}\) \d{3}-\d{2}-\d{2}$/,
 		tePhone = '+7 (999) 999-99-99';
-		
+
 
 	$.validator.addMethod('customPhone', function (value) {
 		return rePhone.test(value);
