@@ -30,6 +30,10 @@ class UserController extends Controller
                 'actions'=>array('adminIndex','adminCreate','adminUpdate','adminDelete'),
                 'roles'=>array('admin'),
             ),
+            array('allow',
+				'actions'=>array('index','save'),
+				'roles'=>array('manager'),
+			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -102,6 +106,39 @@ class UserController extends Controller
 				'labels'=>User::attributeLabels()
 			));
 		}
+	}
+
+	public function actionIndex($partial = false)
+	{
+		if( !$partial ){
+			$this->layout='site';
+		}
+		$model = User::model()->findByPk(Yii::app()->user->getId());
+		$option = array(
+			'model'=>$model,
+			'labels'=>User::attributeLabels()
+		);
+		if( !$partial ){
+			$this->render('index',$option);
+		}else{
+			$this->renderPartial('index',$option);
+		}
+	}
+
+	public function actionSave()
+	{
+		$model = User::model()->findByPk(Yii::app()->user->getId());
+		if(isset($_POST['User']))
+		{
+			foreach ($_POST['User'] as &$value) {
+				$value = trim($value);
+				$value = strip_tags($value);
+				$value = htmlspecialchars($value);
+				$value = mysql_escape_string($value);
+			}
+			$model->attributes=$_POST['User'];
+			if($model->save()) header('Location: '.$this->createUrl('/user'));
+		}	
 	}
 
 	/**

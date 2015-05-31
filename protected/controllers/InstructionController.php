@@ -99,7 +99,6 @@ class InstructionController extends Controller
 			$this->layout='site';
 		}
   		$criteria = new CDbCriteria();
-
         $criteria->condition = 'code="INST_TITLE" OR code="INST_VIDEO"';
 		$model = Settings::model()->findAll($criteria);
 		$option = array(

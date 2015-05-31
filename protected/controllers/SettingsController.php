@@ -76,7 +76,7 @@ class SettingsController extends Controller
 
         $criteria->order = 'sort ASC';
 
-        $criteria->condition = 'code="TITLE" OR code="DESCRIPTION" OR code="KEYWORDS" OR code="ANKETA"';
+        $criteria->condition = '!(code="INST_TITLE" OR code="INST_VIDEO")';
   
 		$model = Settings::model()->findAll($criteria);
 

@@ -41,7 +41,7 @@
                     <h2>Личный Кабинет</h2>
                 </div>
                 <div class="clearfix right">
-                    <h4><? echo $this->user->usr_name; ?></h4>
+                    <h4><? echo $this->user->usr_name." ".$this->user->usr_surname ?></h4>
                     <h3><?=$this->adminMenu["cur"]->name?></h3>
                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/blue-str.png">
                 </div>
@@ -53,11 +53,11 @@
                         <li class="clearfix b-menu-news" data-name="news"><a href="/news"><div class="b-menu-img"></div>Новости</a></li>
                         <!-- <li class="clearfix b-menu-expense"><a href="#"><div class="b-menu-img"></div>Мой счет</a></li> -->
                         <li class="clearfix b-menu-expense" data-name="investition"><a href="/investition"><div class="b-menu-img"></div>Инвестировать</a></li>
-                        <!-- <li class="clearfix b-menu-agreement"><a href="#"><div class="b-menu-img"></div>Договора</a></li>
-                        <li class="clearfix b-menu-data"><a href="#"><div class="b-menu-img"></div>Мои данные</a></li>
-                        <li class="clearfix b-menu-referrals"><a href="#"><div class="b-menu-img"></div>Мои рефералы</a></li>
-                        <li class="clearfix b-menu-settings"><a href="#"><div class="b-menu-img"></div>Настройки кабинета</a></li>
-                        <li class="clearfix b-menu-support"><a href="#"><div class="b-menu-img"></div>Служба поддержки</a></li> -->
+                        <!-- <li class="clearfix b-menu-agreement"><a href="#"><div class="b-menu-img"></div>Договора</a></li> -->
+                        <li class="clearfix b-menu-data" data-name="user"><a href="/user"><div class="b-menu-img"></div>Мои данные</a></li>
+                        <!-- <li class="clearfix b-menu-referrals"><a href="#"><div class="b-menu-img"></div>Мои рефералы</a></li> -->
+                        <!-- <li class="clearfix b-menu-settings"><a href="#"><div class="b-menu-img"></div>Настройки кабинета</a></li> -->
+                        <!-- <li class="clearfix b-menu-support"><a href="#"><div class="b-menu-img"></div>Служба поддержки</a></li> -->
                         <li class="clearfix b-menu-exit"><a href="/site/logout"><div class="b-menu-img"></div>Выход</a></li>                       
                     </ul>
                 </div>

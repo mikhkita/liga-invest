@@ -9,6 +9,35 @@ $(document).ready(function(){
     // setTimeout(resize,1000);
 
     // $(window).resize(resize);
+    var rePhone = /^\+\d \(\d{3}\) \d{3}-\d{2}-\d{2}$/,
+        tePhone = '+7 (999) 999-99-99',
+        reDate = /^[0-3]\d\.[0-1]\d\.\d\d$/,
+        teDate = '99.99.99'; 
+        
+
+    $.validator.addMethod('customPhone', function (value) {
+        return rePhone.test(value);
+    });
+    $.validator.addMethod('customDate', function (value) {
+        return reDate.test(value);
+    });
+    $(".agree-btn").parents('form').each(function(){
+        $(this).validate({
+            rules: {
+                'User[usr_phone_number]': 'customPhone',
+                'User[usr_output_date]': 'customDate',
+                'User[usr_passport_series]': {
+                    number: true
+                },
+                'User[usr_passport_number]': {
+                    number: true
+                },
+            }
+        });
+            $(this).find("input[name='User[usr_phone_number]']").mask(tePhone,{placeholder:"_"});
+            $(this).find("input[name='User[usr_output_date]']").mask(teDate,{placeholder:"_"});
+            $(this).find("input[name='User[usr_unit_code]']").mask("999-999",{placeholder:"_"});
+    });
 
     $("select[name='investition']").change(function(){
         var program = $("select[name='investition'] option:selected").val();
@@ -22,11 +51,19 @@ $(document).ready(function(){
         
     });
 
-     var title = window.location.href,
-        titleVar = 2;
+    var title = window.location.href,
+    titleVar = 2;
     title = title.split(/[\/#?]+/);
     title = title[titleVar];
     $("li[data-name='"+title+"']").addClass("active");
+
+    $("#check_agree").change(function(){
+        if($("#check_agree").prop("checked")) {
+            $(".agree-btn").prop("disabled",false).removeClass("disabled");
+        } else {
+            $(".agree-btn").prop("disabled",true).addClass("disabled");
+        }
+    });
 
 //     function copy_clip(meintext)
 // {

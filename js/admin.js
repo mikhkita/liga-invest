@@ -141,10 +141,13 @@ $(document).ready(function(){
                 "Engine[horsepower]": {
                     number: true
                 },
-                 'News[date]': "customDate"
+                'News[date]': "customDate"
             },
             messages: {
                 "Engine[horsepower]": {
+                    number: "Поле заполнено неверно"
+                },
+                'News[date]': {
                     number: "Поле заполнено неверно"
                 }
             }

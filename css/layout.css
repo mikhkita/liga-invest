@@ -93,12 +93,19 @@ li{
 h1,h2,h3,h4,h5,h6{
 	font-weight: 100;
 }
+label, input[type="checkbox"]{
+	cursor: pointer;
+}
 label.error{
 	display: none !important;
 }
 input.error,textarea.error{
-	background-color: #FFCECE !important;
-	box-shadow: 0 1px 2px rgba(180, 14, 14, 0.57);
+	box-shadow: inset 0px 0px 0px 1px #d00 !important;
+}
+input.disabled {
+	cursor: default !important;
+	background: none !important;
+	background-color: rgb(221, 221, 221) !important;
 }
 .ps-lines{
 
@@ -521,11 +528,15 @@ input:-moz-placeholder {
 						font-size: 15px;
 					}
 
-					.b-2 .content a{
+					.b-2 .content a, .b-2 .content input[type='submit']{
 						padding: 7px 12px 8px 10px;
 						margin-top: 20px;
-						margin-bottom: 20px;
 						display: inline-block;
+						
+					}
+					.b-2 .content input[type='submit'] {
+						display: block;
+						cursor: pointer;
 					}
 					.b-2 .content a{
 						margin-bottom: 20px;
@@ -556,7 +567,8 @@ input:-moz-placeholder {
 			}
 
 			.b-2 .content .green-button:active{
-				margin-top:  22px;
+				position: relative;
+				top: 1px;
 				box-shadow: 0px 1px 3px 0px #ccc;
 			}
 
@@ -628,56 +640,63 @@ input:-moz-placeholder {
 				.b-2 .content .new-investition:active{
 					margin-top: 32px;
 				}
-
-				.b-2 .pasport{
-					margin-top: 55px;
-					width: 380px;
+				.b-2 .data-cont {
+					margin-top: 20px;
 				}
+				.b-2 .pasport{
+					width: 372px;
+					
+				}	
+					.b-2 .pasport>div{
+						display: table;
+						margin-bottom: 14px;
+					}
 
-					.b-2 .pasport h2{
+					.b-2 .pasport label{
 						font-size: 13px;
 						color: #4a4857;
 						width: 80px;
-						margin-bottom: 14px;
-	  					margin-top: 4px;
+						padding-right: 4px;
+						display: table-cell;
+						vertical-align: middle;
+						cursor: pointer;
 					}
 	
 					
 	
 					.b-2 .pasport .pasp-text{
-						width: 95px;
+						width: 100px;
 					}
 	
 					.b-2 .pasport input[type='text']{
-					  	width: 292px;
-  						height: 12px;
+					  	width: 280px;
   						padding: 4px;
   						border-radius: 2px;
   						border: none;
   						box-shadow: inset 0px 0px 3.9px 1px #ccc;
+  						display: table-cell;
+						vertical-align: middle;
 					}
-	
+					
+
 					.b-2 .pasport .pasp{
-						max-width: 52px;
-						margin-right: 10px;
-						margin-left: 5px;
+						max-width: 35px;
 					}
 	
 					.b-2 .pasport .number{
-						max-width: 157px;
+						max-width: 150px;
 					}
 	
 					.b-2 .pasport .number-text{
-						width: 45px;
+						width: 51px;
 					}
 	
 					.b-2 .pasport .data-text{
-						margin-right: 20px
+						width: 90px;
 					}
 	
 					.b-2 .pasport .data{
 						max-width: 52px;
-						margin-right: 10px
 					}
 	
 					.b-2 .pasport .cod{
@@ -685,13 +704,12 @@ input:-moz-placeholder {
 					}
 	
 					.b-2 .pasport .cod-text{
-						  width: 142px;
+						  width: 135px;
 					}
 
 				.b-2 .telephone{
 					text-align: left;
 					width: 280px;
-					margin-top: 55px;
 				}
 
 					.b-2 .telephone .telephone-h3{
@@ -703,37 +721,45 @@ input:-moz-placeholder {
 						margin-top: 0px;
 					}
 
-					.b-2 .content .telephone h2{
+					.b-2 .telephone>div {
+						display: table;
+						margin-bottom: 14px;
+					}
+
+					.b-2 .content .telephone label,.b-2 .content .telephone h2{
+						width: 90px;
+						padding-right: 5px;
 						font-size: 13px;
 						color: #6a6974;
-						margin-right: 15px;
-						margin-top: 3px;
+						display: table-cell;
+						vertical-align: middle;
 					}
 
 					.b-2 .telephone input[type='text']{
 					  	width: 170px;
-	  					height: 12px;
 	  					padding: 4px;
 	  					border-radius: 2px;
 	  					border: none;
 	  					box-shadow: inset 0px 0px 3.9px 1px #ccc;
+	  					display: table-cell;
+						vertical-align: middle;
 					}
 
 					.b-2 .telephone .telephone-p{
 						font-size: 10px;
 						color: #797979;
-						width: 220px;
 						text-align: left;
-						margin-top: 2px;
-						margin-bottom: 2px;
+						margin-bottom: 14px;
 					}
 
 					.b-2 .telephone .ok{
-						margin-top: 43px;
+						margin-top: 0px;
+  						margin-left: 15px;
 					}
 
 					.b-2 .telephone .ok:active{
-						margin-top: 45px;
+  						position: relative;
+  						top: 1px;
 					}
 
 					.b-2 .telephone .code-button{
@@ -742,18 +768,24 @@ input:-moz-placeholder {
   						color: #797979;
   						padding: 0px;
   						text-align: left;
-  						margin-top: 6px;
+  						margin-top: 14px;
+  						margin-bottom: 0px;
+  						text-decoration: underline;
 					}
+						.b-2 .telephone .code-button:hover {
+							text-decoration: none;
+						}
 
 				.b-2 .agreement{
 					text-align: left;
- 					margin-top: 302px;
+					margin-top: 23px;
 				}
 
-					.b-2 .agreement b{
+					.b-2 .agreement label{
 						font-size: 15px;
 						color: #4d5056;
 						margin-left: 10px;
+						font-weight: bold;
 					}
 
 					.b-2 .agreement .readme{

@@ -7,7 +7,17 @@
  * @property integer $usr_id
  * @property string $usr_login
  * @property string $usr_password
+ * @property string $usr_name
+ * @property string $usr_surname
+ * @property string $usr_middle_name
+ * @property string $usr_passport_series
+ * @property string $usr_passport_number
+ * @property string $usr_output
+ * @property string $usr_output_date
+ * @property string $usr_unit_code
+ * @property string $usr_phone_number
  * @property string $usr_email
+ * @property string $usr_rol_id
  */
 class User extends CActiveRecord
 {
@@ -20,7 +30,6 @@ class User extends CActiveRecord
 
 	public $prevRole = null;
 	public $prevPass = null;
-
 	/**
 	 * @return string the associated database table name
 	 */
@@ -37,12 +46,18 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('usr_login, usr_password, usr_email', 'required'),
+			array('usr_login, usr_password, usr_name, usr_surname, usr_email, usr_rol_id', 'required'),
 			array('usr_login, usr_password, usr_email', 'length', 'max'=>128),
-			array('usr_rol_id, usr_name', 'safe'),
+			array('usr_name, usr_surname, usr_middle_name', 'length', 'max'=>50),
+			array('usr_passport_series', 'length', 'max'=>4),
+			array('usr_passport_number', 'length', 'max'=>6),
+			array('usr_output', 'length', 'max'=>255),
+			array('usr_output_date, usr_phone_number', 'length', 'max'=>20),
+			array('usr_unit_code', 'length', 'max'=>7),
+			array('usr_rol_id', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('usr_id, usr_login, usr_password, usr_email, usr_rol_id, usr_name', 'safe', 'on'=>'search'),
+			array('usr_id, usr_login, usr_password, usr_name, usr_surname, usr_middle_name, usr_passport_series, usr_passport_number, usr_output, usr_output_date, usr_unit_code, usr_phone_number, usr_email, usr_rol_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,15 +73,26 @@ class User extends CActiveRecord
 		);
 	}
 
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
 	public function attributeLabels()
 	{
 		return array(
 			'usr_id' => 'ID',
 			'usr_login' => 'Логин',
 			'usr_password' => 'Пароль',
+			'usr_name' => 'Имя',
+			'usr_surname' => 'Фамилия',
+			'usr_middle_name' => 'Отчество',
+			'usr_passport_series' => 'Паспорт серия',
+			'usr_passport_number' => 'Номер',
+			'usr_output' => 'Кем выдан',
+			'usr_output_date' => 'Дата выдачи',
+			'usr_unit_code' => 'Код подразделения',
+			'usr_phone_number' => 'Телефон',
 			'usr_email' => 'E-mail',
 			'usr_rol_id' => 'Роль',
-			'usr_name' => 'Фамилия И.О.',
 		);
 	}
 
@@ -95,7 +121,6 @@ class User extends CActiveRecord
 		$auth->save();
 		return true;
 	}
-
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
@@ -117,7 +142,17 @@ class User extends CActiveRecord
 		$criteria->compare('usr_id',$this->usr_id);
 		$criteria->compare('usr_login',$this->usr_login,true);
 		$criteria->compare('usr_password',$this->usr_password,true);
+		$criteria->compare('usr_name',$this->usr_name,true);
+		$criteria->compare('usr_surname',$this->usr_surname,true);
+		$criteria->compare('usr_middle_name',$this->usr_middle_name,true);
+		$criteria->compare('usr_passport_series',$this->usr_passport_series,true);
+		$criteria->compare('usr_passport_number',$this->usr_passport_number,true);
+		$criteria->compare('usr_output',$this->usr_output,true);
+		$criteria->compare('usr_output_date',$this->usr_output_date,true);
+		$criteria->compare('usr_unit_code',$this->usr_unit_code,true);
+		$criteria->compare('usr_phone_number',$this->usr_phone_number,true);
 		$criteria->compare('usr_email',$this->usr_email,true);
+		$criteria->compare('usr_rol_id',$this->usr_rol_id,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
