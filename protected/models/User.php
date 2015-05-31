@@ -98,7 +98,7 @@ class User extends CActiveRecord
 
 	public function beforeSave() {
 		parent::beforeSave();
-		$this->usr_password = ( $this->prevPass == $this->usr_password ) ? $this->usr_password : md5($this->usr_password."eduplan");
+		$this->usr_password = ( $this->prevPass == NULL || $this->prevPass == $this->usr_password ) ? $this->usr_password : md5($this->usr_password."eduplan");
 
 		if( !$this->usr_login || !$this->usr_email || !$this->usr_password ){
 	        return false;
