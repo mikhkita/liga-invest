@@ -64,9 +64,13 @@
                         <li class="clearfix b-menu-exit"><a href="/site/logout"><div class="b-menu-img"></div>Выход</a></li>                       
                     </ul>
                 </div>
-                <div class="content">
+                <? if( $this->adminMenu["cur"]->code=='support' ): ?>
                     <?php echo $content;?>
-                </div>
+                <? else: ?>
+                    <div class="content">
+                        <?php echo $content;?>
+                    </div>
+                <? endif;?>
             </div>
         </div>
     </div>

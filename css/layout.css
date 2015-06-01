@@ -1,4 +1,4 @@
-  
+
 @font-face {
     font-family: 'pf_beausans_proregular';
     src: url('../fonts/pfbeausanspro-reg-webfont.eot');
@@ -131,6 +131,15 @@ input.disabled {
 	}
 .fancybox-inner{
 	overflow: visible !important;
+}
+.fancybox-skin {
+	background-color: rgb(66, 154, 184);
+  	border-radius: 10px;
+}
+.fancybox-opened .fancybox-skin {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+    -moz-box-shadow: none;
 }
 .bold{
 	font-family: 'PFM';
@@ -528,13 +537,13 @@ input:-moz-placeholder {
 						font-size: 15px;
 					}
 
-					.b-2 .content a, .b-2 .content input[type='submit']{
+					.b-2 .content a, .b-2 input[type='submit']{
 						padding: 7px 12px 8px 10px;
 						margin-top: 20px;
 						display: inline-block;
 						
 					}
-					.b-2 .content input[type='submit'] {
+					.b-2 input[type='submit'] {
 						display: block;
 						cursor: pointer;
 					}
@@ -548,7 +557,7 @@ input:-moz-placeholder {
 				margin-bottom: 1px !important;
 			}
 
-			.b-2 .content .green-button{
+			.b-2 .content .green-button,.support .green-button{
 				background: linear-gradient(to top, #81c64c, #c7f294);
   				color: #fff;
   				font-family: 'pf_beausans_proregular';
@@ -561,12 +570,12 @@ input:-moz-placeholder {
 				box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.5);
 			}
 
-			.b-2 .content .green-button:hover
+			.b-2 .content .green-button:hover,.support .green-button:hover
 			{
 				background: linear-gradient(to top, #70ad41, #b1df7d);
 			}
 
-			.b-2 .content .green-button:active{
+			.b-2 .content .green-button:active,.support .green-button:active{
 				position: relative;
 				top: 1px;
 				box-shadow: 0px 1px 3px 0px #ccc;
@@ -812,10 +821,20 @@ input:-moz-placeholder {
 					}
 
 		.b-2 .support{
-
+			display: table-cell;
+			vertical-align: top;
+			padding: 16px 18px 17px 17px;
+			text-align: left;
 		}
-
-			.b-2 .support h6{
+		.b-2 form:after{
+			visibility: hidden;
+  			display: block;
+  			content: ".";
+  			font-size: 0px;
+  			clear: both;
+  			height: 0;
+		}
+			.b-2 h6{
 				font-size: 20px;
 				color: #4a4857;
 				font-family: 'pf_bague_sans_probold';
@@ -838,19 +857,17 @@ input:-moz-placeholder {
 				float: right;
 			}
 
-			.b-2 .support .often{
-				margin-top: 110px;
-			}
-
 		.b-2 .history{
-			width: 227px;
+			width: 228px;
   			background-color: #ededed;
-  			margin-right: -19px;
-  			margin-top: -16px;
-  			min-height: 530px;
+  			max-height: 700px;
   			border-radius: 0px 0px 8px 0px;
   			text-align: center;
+  			display: table-cell;
 		}
+			.b-2 .history ul {
+				max-height: 700px;
+			}
 
 			.b-2 .history h6{
 				color: #4d5056;
@@ -881,9 +898,9 @@ input:-moz-placeholder {
 				.b-2 .history p{
 					font-size: 13px;
 					color: #808080;
-					width: 175px;
 					font-family: 'pf_bague_sans_prolight';
 					margin-bottom: 20px;
+					text-align: justify;
 				}	
 
 				.b-2 .history .wheit{
@@ -1055,7 +1072,7 @@ input:-moz-placeholder {
 				}
 				.b-2 .content .investition-program .putin{
 					margin-top: 15px;
-					margin-bottom: 30px;
+					margin-bottom: 0px;
 				}
 
 				.b-2 .content .investition-program a{
@@ -1076,12 +1093,15 @@ input:-moz-placeholder {
 					color: #fff;
 					padding: 7px 12px 8px 10px;
 					margin-right: 25px;
-					margin-top: -45px;
-				}
+				
+					margin-bottom: 10px;
+}
 
 				.b-2 .content .investition-program .green:active{
-					margin-top: -43px;
-				}
+					position: relative;
+				
+					top: 1px;
+}
 
 		.b-2 .content h3{
 			font-family: 'pf_bague_sans_probold';
@@ -1309,15 +1329,19 @@ input:-moz-placeholder {
 	  				margin-bottom: 10px;
 				}
 				.b-2 .news-more a{
-					padding: 0px;
- 					
-					margin-top: 10px;
- 					
+					padding: 0px;			
+					margin-top: 10px;		
 					font-size: 15px;
  					text-decoration: underline;
  					color: #429ab8;
  					margin-bottom: 0px;
 				}
+					.b-2 .news-more a:hover {
+						text-decoration: none;
+					}
+					.b-2 .news-more a:active {
+						margin-bottom: 0px;
+					}
 				.b-2 .e-mail-password>div {
 					display: table;
 					margin-bottom: 14px;
@@ -1339,6 +1363,35 @@ input:-moz-placeholder {
 						vertical-align: middle;
 						cursor: pointer;
 					}
+			.b-2 .content.support-wrap {
+				width: 720px;
+				padding: 0;
+			}
+			.sup-fancy {
+				padding: 15px;
+			}
+			.sup-fancy h3 {
+				color: #4a4857;
+				text-align: left;
+			}
+			.sup-fancy .question {
+				font-size: 15px;
+  				color: rgb(255, 255, 255);
+  				font-style: italic;
+  				margin-top: 10px;
+  				text-align: justify;
+  				background-color: rgb(47, 100, 118);
+  				padding: 20px;
+  				box-shadow: inset 2px 2px 1px 1px rgb(43, 77, 89);
+  				border-radius: 7px;
+  				margin-bottom: 20px;
+  			}
+  			.sup-fancy .answer {
+  				color: white;
+  				text-align: justify;
+  				margin-top: 10px;
+  				margin-bottom: 10px;
+  			}
 .map a{
 	padding: 0px !important;
 	margin: 0px !important;

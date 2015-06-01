@@ -18,7 +18,7 @@ class SupportController extends Controller
 				'roles'=>array('manager'),
 			),
 			array('allow',
-				'actions'=>array('index'),
+				'actions'=>array('index','detail'),
 				'roles'=>array('manager'),
 			),
 			array('deny',
@@ -109,6 +109,9 @@ class SupportController extends Controller
         $criteria->order = 'date DESC';
         
 		$model = Support::model()->with("user")->findAll($criteria);
+		foreach ($model as $item) {
+			$item->date = Yii::app()->dateFormatter->format('dd.MM.yyyy',$item->date);
+		}
 		$option = array(
 			'data'=>$model,
 			'filter' => $filter,
@@ -132,6 +135,9 @@ class SupportController extends Controller
 		$criteria->condition = 'user_id='.$user_id;
 
 		$model = Support::model()->findAll($criteria);
+		foreach ($model as $item) {
+			$item->date = Yii::app()->dateFormatter->format('dd.MM.yyyy',$item->date);
+		}
 		$new = new Support;
 		
 		if(isset($_POST['Support']))
@@ -157,6 +163,14 @@ class SupportController extends Controller
 		}
 	}
 
+	public function actionDetail($id)
+	{
+		$model=$this->loadModel($id);
+
+			$this->renderPartial('detail',array(
+				'model'=>$model,
+			));
+	}
 	public function loadModel($id)
 	{
 		$model=Support::model()->findByPk($id);
