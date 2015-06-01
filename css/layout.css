@@ -862,7 +862,7 @@ input:-moz-placeholder {
 
 			.b-2 .history .message{
 				width: 188px;
-				height: 88px;
+				min-height: 88px;
 				background-color: #fff;
 				border-radius: 5px;
 				box-shadow: inset 0px 0px 3px 1px #ccc;
@@ -871,13 +871,19 @@ input:-moz-placeholder {
 				margin-bottom: 15px;
 				text-align: left;
 				padding: 10px;
+				position: relative;
 			}
-
+				.b-answer{
+					position: absolute;
+  					width: 189px;
+  					bottom: 8px;
+				}
 				.b-2 .history p{
 					font-size: 13px;
 					color: #808080;
 					width: 175px;
 					font-family: 'pf_bague_sans_prolight';
+					margin-bottom: 20px;
 				}	
 
 				.b-2 .history .wheit{
@@ -1337,6 +1343,7 @@ input:-moz-placeholder {
 	padding: 0px !important;
 	margin: 0px !important;
 }
+
 
 @media screen and (max-width: 1250px){
 	

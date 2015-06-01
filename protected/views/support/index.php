@@ -14,7 +14,7 @@
 		<? foreach ($model as $item): ?>
 		<div class="message">
 			<p><?=$item->question?></p>
-			<div class="clearfix">
+			<div class="clearfix b-answer">
 				<? if( $item->answer ): ?>
 					<h5 class="check left">ответ получен</h5>
 				<? else: ?>
