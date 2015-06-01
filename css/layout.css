@@ -659,7 +659,6 @@ input:-moz-placeholder {
 						padding-right: 4px;
 						display: table-cell;
 						vertical-align: middle;
-						cursor: pointer;
 					}
 	
 					
@@ -1137,17 +1136,13 @@ input:-moz-placeholder {
 				width: 150px;
 			}
 
-			.b-2 .content .e-mail-password input[type="text"]{
+			.b-2 .content .e-mail-password input[type='text'],.b-2 .content .e-mail-password input[type='password']{
 				height: 12px;
   				padding: 4px;
   				width: 168px;
   				border-radius: 2px;
   				border: none;
   				box-shadow: inset 0px 0px 3.9px 1px #ccc;	
-			}
-
-			.b-2 .content .e-mail-password a{
-				float: right;
 			}
 
 			.b-2 table{
@@ -1308,6 +1303,27 @@ input:-moz-placeholder {
 	  				color: #949494;
 	  				margin-bottom: 10px;
 				}
+				.b-2 .e-mail-password>div {
+					display: table;
+					margin-bottom: 14px;
+				}
+					.b-2 .e-mail-password>div h2{
+						display: table-cell;
+						vertical-align: middle;
+					}
+					.b-2 .e-mail-password>div input{
+						display: table-cell;
+						vertical-align: middle;
+					}
+					.b-2 .e-mail-password label{
+						font-size: 15px;
+						color: #4a4857;
+						width: 145px;
+						padding-right: 5px;
+						display: table-cell;
+						vertical-align: middle;
+						cursor: pointer;
+					}
 .map a{
 	padding: 0px !important;
 	margin: 0px !important;

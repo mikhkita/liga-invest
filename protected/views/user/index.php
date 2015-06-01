@@ -1,6 +1,5 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'faculties-form',
-	'action' => $this->createUrl('/user/save'),
 	'enableAjaxValidation'=>false,
 )); ?>
 

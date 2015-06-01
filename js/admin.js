@@ -129,32 +129,50 @@ $(document).ready(function(){
     }
 
     function bindForm($form){
-        var reDate = /^[0-3]\d\.[0-1]\d\.20\d\d$/,
-        teDate = '99.99.9999';  
+         var rePhone = /^(?:\+\d \(\d{3}\) \d{3}\-\d{2}\-\d{2})?$/,
+            tePhone = '+7 (999) 999-99-99',
+            reDate = /^(?:[0-3]\d\.[0-1]\d\.\d\d)?$/,
+            teDate = '99.99.99'; 
+            
 
+        $.validator.addMethod('customPhone', function (value) {
+            return rePhone.test(value);
+        });
         $.validator.addMethod('customDate', function (value) {
             return reDate.test(value);
         });
-        $form.validate({
-            ignore: "",
-            rules: {
-                "Engine[horsepower]": {
-                    number: true
+            $form.validate({
+                rules: {
+                    'User[usr_phone_number]': 'customPhone',
+                    'User[usr_qiwi]': 'customPhone',
+                    'User[usr_output_date]': 'customDate',
+                    'User[usr_passport_series]': {
+                        number: true
+                    },
+                    'User[usr_yandex]': {
+                        number: true
+                    },
+                    'User[usr_passport_number]': {
+                        number: true
+                    },
                 },
-                'News[date]': "customDate"
-            },
-            messages: {
-                "Engine[horsepower]": {
-                    number: "Поле заполнено неверно"
-                },
-                'News[date]': {
-                    number: "Поле заполнено неверно"
+                messages: {
+                    'User[usr_passport_series]': {
+                        number: "Поле заполнено неверно"
+                    },
+                    'User[usr_yandex]': {
+                        number: "Поле заполнено неверно"
+                    },
+                    'User[usr_passport_number]': {
+                        number: "Поле заполнено неверно"
+                    },
                 }
-            }
-        });
-        if( $form.find("input[name='News[date]']").length ){
-            $form.find("input[name='News[date]']").mask(teDate,{placeholder:"_"});
-        }
+            });
+                $form.find("input[name='User[usr_phone_number]'],input[name='User[usr_qiwi]']").mask(tePhone,{placeholder:"_"});
+                $form.find("input[name='User[usr_output_date]']").mask(teDate,{placeholder:"_"});
+                $form.find("input[name='User[usr_unit_code]']").mask("999-999",{placeholder:"_"});
+                $form.find("input[name='User[usr_card]']").mask("9999 9999 9999 9999",{placeholder:"_"});
+
         $form.submit(function(e,a){
             tinymce.triggerSave();
             if( $(this).valid() && !$(this).find("input[type=submit]").hasClass("blocked") ){

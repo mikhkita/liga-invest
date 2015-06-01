@@ -154,4 +154,13 @@ class Controller extends CController
             }
         }
     }
+
+    public function clearStr($array) {
+        foreach ($array as &$value) {
+            $value = trim($value);
+            $value = strip_tags($value);
+            $value = htmlspecialchars($value);
+            $value = mysql_escape_string($value);
+        }
+    }
 }

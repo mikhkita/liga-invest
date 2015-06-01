@@ -27,11 +27,11 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',
-                'actions'=>array('adminIndex','adminCreate','adminUpdate','adminDelete'),
+                'actions'=>array('adminIndex','adminDetail','adminCreate','adminUpdate','adminDelete'),
                 'roles'=>array('admin'),
             ),
             array('allow',
-				'actions'=>array('index','save'),
+				'actions'=>array('index','cabinet'),
 				'roles'=>array('manager'),
 			),
 			array('deny',  // deny all users
@@ -108,37 +108,81 @@ class UserController extends Controller
 		}
 	}
 
-	public function actionIndex($partial = false)
+	public function actionAdminDetail($id)
+	{
+		$model=$this->loadModel($id);
+
+		if(isset($_POST['User']))
+		{
+			$model->attributes=$_POST['User'];
+			if($model->save()){
+				$this->actionAdminindex(true);
+			}
+				
+		}else{
+			$this->renderPartial('adminDetail',array(
+				'model'=>$model,
+			));
+		}
+	}
+
+	public function actionIndex($partial = false,$error = NULL)
 	{
 		if( !$partial ){
 			$this->layout='site';
 		}
 		$model = User::model()->findByPk(Yii::app()->user->getId());
-		$option = array(
-			'model'=>$model,
-			'labels'=>User::attributeLabels()
-		);
-		if( !$partial ){
-			$this->render('index',$option);
-		}else{
-			$this->renderPartial('index',$option);
+		if(isset($_POST['User']))
+		{
+			header('Location: '.$this->createUrl('/user'));
+			$this->clearStr($_POST['User']);
+			$model->attributes=$_POST['User'];
+			if(!$model->save()) header('Location: '.$this->createUrl('/user',array("error" => 'save')));
+		} else {
+			$option = array(
+				'model'=>$model,
+				'error' => $error,
+				'labels'=>User::attributeLabels()
+			);
+			if( !$partial ){
+				$this->render('index',$option);
+			}else{
+				$this->renderPartial('index',$option);
+			}
 		}
 	}
 
-	public function actionSave()
+	public function actionCabinet($partial = false,$error = NULL)
 	{
+		if( !$partial ){
+			$this->layout='site';
+		}
 		$model = User::model()->findByPk(Yii::app()->user->getId());
-		if(isset($_POST['User']))
+
+		if(isset($_POST['User']) )
 		{
-			foreach ($_POST['User'] as &$value) {
-				$value = trim($value);
-				$value = strip_tags($value);
-				$value = htmlspecialchars($value);
-				$value = mysql_escape_string($value);
+			$this->clearStr($_POST['User']);
+			header('Location: '.$this->createUrl('/user/cabinet'));
+			if( $model->usr_password == md5($_POST['User']['old_usr_password']."eduplan") && $_POST['User']['new_usr_password']) {	
+				$model->prevPass = $model->usr_password;
+				$_POST['User']['usr_password'] = $_POST['User']['new_usr_password'];			
+			} else if($_POST['User']['old_usr_password'] || $_POST['User']['new_usr_password']){	
+				header('Location: '.$this->createUrl('/user/cabinet',array("error" => 'password')));
 			}
 			$model->attributes=$_POST['User'];
-			if($model->save()) header('Location: '.$this->createUrl('/user'));
-		}	
+			if(!$model->save()) header('Location: '.$this->createUrl('/user/cabinet',array("error" => 'save')));				
+		} else {
+			$option = array(
+				'model'=>$model,
+				'error' => $error,
+				'labels'=>User::attributeLabels()
+			);
+			if( !$partial ){
+				$this->render('cabinet',$option);
+			}else{
+				$this->renderPartial('cabinet',$option);
+			}
+		}
 	}
 
 	/**

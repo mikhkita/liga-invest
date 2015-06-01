@@ -9,9 +9,9 @@ $(document).ready(function(){
     // setTimeout(resize,1000);
 
     // $(window).resize(resize);
-    var rePhone = /^\+\d \(\d{3}\) \d{3}-\d{2}-\d{2}$/,
+    var rePhone = /^(?:\+\d \(\d{3}\) \d{3}\-\d{2}\-\d{2})?$/,
         tePhone = '+7 (999) 999-99-99',
-        reDate = /^[0-3]\d\.[0-1]\d\.\d\d$/,
+        reDate = /^(?:[0-3]\d\.[0-1]\d\.\d\d)?$/,
         teDate = '99.99.99'; 
         
 
@@ -25,18 +25,34 @@ $(document).ready(function(){
         $(this).validate({
             rules: {
                 'User[usr_phone_number]': 'customPhone',
+                'User[usr_qiwi]': 'customPhone',
                 'User[usr_output_date]': 'customDate',
                 'User[usr_passport_series]': {
+                    number: true
+                },
+                'User[usr_yandex]': {
                     number: true
                 },
                 'User[usr_passport_number]': {
                     number: true
                 },
+            },
+            messages: {
+                'User[usr_passport_series]': {
+                    number: "Поле заполнено неверно"
+                },
+                'User[usr_yandex]': {
+                    number: "Поле заполнено неверно"
+                },
+                'User[usr_passport_number]': {
+                    number: "Поле заполнено неверно"
+                },
             }
         });
-            $(this).find("input[name='User[usr_phone_number]']").mask(tePhone,{placeholder:"_"});
+            $(this).find("input[name='User[usr_phone_number]'],input[name='User[usr_qiwi]']").mask(tePhone,{placeholder:"_"});
             $(this).find("input[name='User[usr_output_date]']").mask(teDate,{placeholder:"_"});
             $(this).find("input[name='User[usr_unit_code]']").mask("999-999",{placeholder:"_"});
+            $(this).find("input[name='User[usr_card]']").mask("9999 9999 9999 9999",{placeholder:"_"});
     });
 
     $("select[name='investition']").change(function(){

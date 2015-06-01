@@ -343,12 +343,17 @@ h1{
             /*height: 32px;*/
             margin: 0px !important;
         }
+    
     .b-table tr:nth-child(2n+2){
         background-color: #FFF4CD;
     }
     .b-table tr:nth-child(2n+1){
         background-color: #F5E9BC;
     }
+    .b-table tr.complete{
+        background-color: rgb(118, 179, 67);
+    }
+
         .b-table th{
             padding: 5px;
         }

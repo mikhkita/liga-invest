@@ -1,17 +1,7 @@
 <?php
 
-class InvestitionController extends Controller
+class SupportController extends Controller
 {
-	static private $instance = NULL;
-
-	static public function getInstance()
-    {
-        if(self::$instance == NULL)
-        {
-            self::$instance = new InvestitionController();
-        }
-        return self::$instance;
-    }
 
 	public function filters()
 	{
@@ -39,17 +29,17 @@ class InvestitionController extends Controller
 
 	public function actionAdminCreate()
 	{
-		$model=new Investition;
+		$model=new Support;
 
-		if(isset($_POST['Investition']))
+		if(isset($_POST['Support']))
 		{
-			foreach ($_POST['Investition'] as &$value) {
+			foreach ($_POST['Support'] as &$value) {
 		    	$value = trim($value);
 			}
-			$program = Investition::model()->findByAttributes(array("name" =>$_POST['Investition']['name']));
+			$program = Support::model()->findByAttributes(array("name" =>$_POST['Support']['name']));
 			if($program=="") {	
-				$this->replaceImage($_POST['Investition']['image'],$model->image);
-				$model->attributes=$_POST['Investition'];
+				$this->replaceImage($_POST['Support']['image'],$model->image);
+				$model->attributes=$_POST['Support'];
 				if($model->save()){
 					$this->actionAdminIndex(true);
 					return true;
@@ -70,21 +60,14 @@ class InvestitionController extends Controller
 	{
 		$model=$this->loadModel($id);
 
-		if(isset($_POST['Investition']))
+		if(isset($_POST['Support']))
 		{
-			foreach ($_POST['Investition'] as &$value) {
+			foreach ($_POST['Support'] as &$value) {
 		    	$value = trim($value);
 			}
-
-			$program = Investition::model()->findByAttributes(array("name" =>$_POST['Investition']['name']));
-			if($program=="" || $_POST['Investition']['name']==$model->name) {	
-				$this->replaceImage($_POST['Investition']['image'],$model->image);
-				$model->attributes=$_POST['Investition'];
+				$model->attributes=$_POST['Support'];
 				if($model->save())
 					$this->actionAdminIndex(true);
-			} else {
-				$this->actionAdminIndex(true,"Такое имя уже существует");
-			}
 		}else{
 			$this->renderPartial('adminUpdate',array(
 				'model'=>$model,
@@ -104,13 +87,13 @@ class InvestitionController extends Controller
 		if( !$partial ){
 			$this->layout='admin';
 		}
-  		$filter = new Investition('filter');
+  		$filter = new Support('filter');
 		$criteria = new CDbCriteria();
 
-		if (isset($_GET['Investition']))
+		if (isset($_GET['Support']))
         {
-            $filter->attributes = $_GET['Investition'];
-            foreach ($_GET['Investition'] AS $key => $val)
+            $filter->attributes = $_GET['Support'];
+            foreach ($_GET['Support'] AS $key => $val)
             {
                 if ($val != '')
                 {
@@ -123,13 +106,13 @@ class InvestitionController extends Controller
             }
         }
 
-        $criteria->order = 'name ASC';
+        $criteria->order = 'date DESC';
         
-		$model = Investition::model()->findAll($criteria);
+		$model = Support::model()->findAll($criteria);
 		$option = array(
 			'data'=>$model,
 			'filter' => $filter,
-			'labels'=>Investition::attributeLabels()
+			'labels'=>Support::attributeLabels()
 		);
 		if( !$partial ){
 			$this->render('adminIndex',$option);
@@ -138,30 +121,45 @@ class InvestitionController extends Controller
 		}
 	}
 	
-	public function actionIndex($partial = false)
+	public function actionIndex($partial = false,$error = NULL)
 	{
 		if( !$partial ){
 			$this->layout='site';
 		}
+		$user_id = Yii::app()->user->getId();
 
 		$criteria = new CDbCriteria();
-		$criteria->order = 'name ASC';
+		$criteria->condition = 'user_id='.$user_id;
 
-		$model = Investition::model()->findAll($criteria);
-		$option = array(
-			'model' => $model,
-			'labels'=>Investition::attributeLabels()
-		);
-		if( !$partial ){
-			$this->render('index',$option);
-		}else{
-			$this->renderPartial('index',$option);
+		$model = Support::model()->findAll($criteria);
+		$new = new Support;
+		
+		if(isset($_POST['Support']))
+		{
+			header('Location: '.$this->createUrl('/support'));
+			$this->clearStr($_POST['Support']);
+			$new->attributes=$_POST['Support'];
+			$new->user_id=$user_id;
+			$new->date = date("Y-m-d");
+			if(!$new->save()) header('Location: '.$this->createUrl('/support',array("error" => 'save')));
+		} else {
+			$option = array(
+				'new' => $new,
+				'model'=>$model,
+				'error' => $error,
+				'labels'=>User::attributeLabels()
+			);
+			if( !$partial ){
+				$this->render('index',$option);
+			}else{
+				$this->renderPartial('index',$option);
+			}
 		}
 	}
 
 	public function loadModel($id)
 	{
-		$model=Investition::model()->findByPk($id);
+		$model=Support::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

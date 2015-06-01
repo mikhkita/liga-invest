@@ -56,8 +56,8 @@
                         <!-- <li class="clearfix b-menu-agreement"><a href="#"><div class="b-menu-img"></div>Договора</a></li> -->
                         <li class="clearfix b-menu-data" data-name="user"><a href="/user"><div class="b-menu-img"></div>Мои данные</a></li>
                         <!-- <li class="clearfix b-menu-referrals"><a href="#"><div class="b-menu-img"></div>Мои рефералы</a></li> -->
-                        <!-- <li class="clearfix b-menu-settings"><a href="#"><div class="b-menu-img"></div>Настройки кабинета</a></li> -->
-                        <!-- <li class="clearfix b-menu-support"><a href="#"><div class="b-menu-img"></div>Служба поддержки</a></li> -->
+                        <li class="clearfix b-menu-settings" data-name="user/cabinet"><a href="/user/cabinet"><div class="b-menu-img"></div>Настройки кабинета</a></li>
+                        <li class="clearfix b-menu-support" data-name="support"><a href="/support"><div class="b-menu-img"></div>Служба поддержки</a></li>
                         <li class="clearfix b-menu-exit"><a href="/site/logout"><div class="b-menu-img"></div>Выход</a></li>                       
                     </ul>
                 </div>

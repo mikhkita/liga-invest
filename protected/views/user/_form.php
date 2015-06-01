@@ -14,6 +14,12 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'usr_surname'); ?>
+		<?php echo $form->textField($model,'usr_surname',array('maxlength'=>255,'required'=>true)); ?>
+		<?php echo $form->error($model,'usr_surname'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'usr_login'); ?>
 		<?php echo $form->textField($model,'usr_login',array('maxlength'=>255,'required'=>true)); ?>
 		<?php echo $form->error($model,'usr_login'); ?>

@@ -17,6 +17,10 @@
  * @property string $usr_unit_code
  * @property string $usr_phone_number
  * @property string $usr_email
+ * @property string $usr_qiwi
+ * @property string $usr_yandex
+ * @property string $usr_webmoney
+ * @property string $usr_card
  * @property string $usr_rol_id
  */
 class User extends CActiveRecord
@@ -52,12 +56,13 @@ class User extends CActiveRecord
 			array('usr_passport_series', 'length', 'max'=>4),
 			array('usr_passport_number', 'length', 'max'=>6),
 			array('usr_output', 'length', 'max'=>255),
-			array('usr_output_date, usr_phone_number', 'length', 'max'=>20),
+			array('usr_output_date, usr_phone_number, usr_qiwi, usr_yandex, usr_card', 'length', 'max'=>20),
 			array('usr_unit_code', 'length', 'max'=>7),
+			array('usr_webmoney', 'length', 'max'=>13),
 			array('usr_rol_id', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('usr_id, usr_login, usr_password, usr_name, usr_surname, usr_middle_name, usr_passport_series, usr_passport_number, usr_output, usr_output_date, usr_unit_code, usr_phone_number, usr_email, usr_rol_id', 'safe', 'on'=>'search'),
+			array('usr_id, usr_login, usr_password, usr_name, usr_surname, usr_middle_name, usr_passport_series, usr_passport_number, usr_output, usr_output_date, usr_unit_code, usr_phone_number, usr_email, usr_qiwi, usr_yandex, usr_webmoney, usr_card, usr_rol_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,7 +75,9 @@ class User extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'role' => array(self::BELONGS_TO, 'Role', 'usr_rol_id'),
+			'questions' => array(self::HAS_MANY, 'Support', 'id'),
 		);
+
 	}
 
 	/**
@@ -92,6 +99,10 @@ class User extends CActiveRecord
 			'usr_unit_code' => 'Код подразделения',
 			'usr_phone_number' => 'Телефон',
 			'usr_email' => 'E-mail',
+			'usr_qiwi' => 'Номер киви',
+			'usr_yandex' => 'Яндекс кошелек',
+			'usr_webmoney' => 'Вебмани',
+			'usr_card' => 'Карта Сбербанка',
 			'usr_rol_id' => 'Роль',
 		);
 	}
@@ -152,6 +163,10 @@ class User extends CActiveRecord
 		$criteria->compare('usr_unit_code',$this->usr_unit_code,true);
 		$criteria->compare('usr_phone_number',$this->usr_phone_number,true);
 		$criteria->compare('usr_email',$this->usr_email,true);
+		$criteria->compare('usr_qiwi',$this->usr_qiwi,true);
+		$criteria->compare('usr_yandex',$this->usr_yandex,true);
+		$criteria->compare('usr_webmoney',$this->usr_webmoney,true);
+		$criteria->compare('usr_card',$this->usr_card,true);
 		$criteria->compare('usr_rol_id',$this->usr_rol_id,true);
 
 		return new CActiveDataProvider($this, array(

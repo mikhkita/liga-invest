@@ -16,7 +16,11 @@
 			<td class="align-left"><? echo $item->usr_name; ?></td>
 			<td class="align-left"><? echo $item->usr_email; ?></td>
 			<td><? echo $item->role->name; ?></td>
-			<td><a href="<?php echo Yii::app()->createUrl('/user/adminUpdate',array('id'=>$item->usr_id))?>" class="ajax-form ajax-update b-tool b-tool-update" title="Редактировать раздел"></a><a href="<?php echo Yii::app()->createUrl('/user/adminDelete',array('id'=>$item->usr_id))?>" class="ajax-form ajax-delete b-tool b-tool-delete" title="Удалить раздел"></a></td>
+			<td>
+				<a href="<?php echo Yii::app()->createUrl('/user/adminUpdate',array('id'=>$item->usr_id))?>" class="ajax-form ajax-update b-tool b-tool-update" title="Редактировать пользователя"></a>
+				<a href="<?php echo Yii::app()->createUrl('/user/adminDetail',array('id'=>$item->usr_id))?>" class="ajax-form ajax-update b-tool b-tool-list" title="Редактировать информацию"></a>
+				<a href="<?php echo Yii::app()->createUrl('/user/adminDelete',array('id'=>$item->usr_id))?>" class="ajax-form ajax-delete b-tool b-tool-delete" title="Удалить пользователя"></a>
+			</td>
 		</tr>
 	<? endforeach; ?>
 </table>
