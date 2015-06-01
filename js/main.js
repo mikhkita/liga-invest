@@ -134,7 +134,9 @@ $(document).ready(function(){
 // }
 
     if( $("#map_canvas").length ){
-    	var myPlace = new google.maps.LatLng(59.942342, 30.320029);
+        var coords = $("#map_canvas").attr("data-coords").split(",");
+
+    	var myPlace = new google.maps.LatLng(coords[0].trim(), coords[1].trim());
         var myOptions = {
             zoom: 16,
             center: myPlace,

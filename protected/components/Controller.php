@@ -11,6 +11,7 @@ class Controller extends CController
 	 */
 	public $layout='admin';
 	public $scripts = array();
+    public $globalScripts = array();
 	/**
 	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
 	 */
@@ -111,10 +112,10 @@ class Controller extends CController
         }
     }
 
-    public function getParam($code){
+    public function getParam($code,$toBr = false){
         if( $this->settings == NULL ) $this->getSettings();
 
-        return $this->settings[mb_strtoupper($code,"UTF-8")];
+        return ($toBr)?$this->replaceToBr($this->settings[mb_strtoupper($code,"UTF-8")]):$this->settings[mb_strtoupper($code,"UTF-8")];
     }
 
     public function getSettings(){
