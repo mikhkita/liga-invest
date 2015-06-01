@@ -56,7 +56,7 @@ class Support extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'user_id' => 'User',
+			'user_id' => 'Пользователь',
 			'question' => 'Вопрос',
 			'answer' => 'Ответ',
 			'date' => 'Дата',

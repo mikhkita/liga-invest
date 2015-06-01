@@ -67,10 +67,8 @@ $(document).ready(function(){
         
     });
 
-    var title = window.location.href,
-    titleVar = 2;
-    title = title.split(/[\/#?]+/);
-    title = title[titleVar];
+    var title = window.location.pathname;
+    title = title.substr(1);
     $("li[data-name='"+title+"']").addClass("active");
 
     $("#check_agree").change(function(){
@@ -81,6 +79,11 @@ $(document).ready(function(){
         }
     });
 
+    $(".various").fancybox({
+        maxWidth    : 800,
+        maxHeight   : 600
+    });
+    
 //     function copy_clip(meintext)
 // {
 //  if (window.clipboardData) {

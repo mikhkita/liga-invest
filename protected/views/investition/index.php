@@ -25,7 +25,7 @@
 		</div>
 		<div class="clearfix putin">
 			<h6 class="left">Инвестор:</h6>
-			<h5>Владмир Путин</h5>
+			<h5><? echo $this->user->usr_name." ".$this->user->usr_surname ?></h5>
 		</div>
 		<a href="#" class="green-button green right">Инвестировать</a>
 	</div>
