@@ -20,6 +20,12 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'usr_middle_name'); ?>
+		<?php echo $form->textField($model,'usr_middle_name',array('maxlength'=>50)); ?>
+		<?php echo $form->error($model,'usr_middle_name'); ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'usr_login'); ?>
 		<?php echo $form->textField($model,'usr_login',array('maxlength'=>255,'required'=>true)); ?>
 		<?php echo $form->error($model,'usr_login'); ?>

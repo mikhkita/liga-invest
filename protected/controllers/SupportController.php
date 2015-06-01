@@ -38,7 +38,6 @@ class SupportController extends Controller
 			}
 			$program = Support::model()->findByAttributes(array("name" =>$_POST['Support']['name']));
 			if($program=="") {	
-				$this->replaceImage($_POST['Support']['image'],$model->image);
 				$model->attributes=$_POST['Support'];
 				if($model->save()){
 					$this->actionAdminIndex(true);
@@ -131,13 +130,7 @@ class SupportController extends Controller
 		}
 		$user_id = Yii::app()->user->getId();
 
-		$criteria = new CDbCriteria();
-		$criteria->condition = 'user_id='.$user_id;
-
-		$model = Support::model()->findAll($criteria);
-		foreach ($model as $item) {
-			$item->date = Yii::app()->dateFormatter->format('dd.MM.yyyy',$item->date);
-		}
+		
 		$new = new Support;
 		
 		if(isset($_POST['Support']))
@@ -149,10 +142,19 @@ class SupportController extends Controller
 			$new->date = date("Y-m-d");
 			if(!$new->save()) header('Location: '.$this->createUrl('/support',array("error" => 'save')));
 		} else {
+			$criteria = new CDbCriteria();
+			$criteria->condition = 'user_id='.$user_id;
+	
+			$model = Support::model()->findAll($criteria);
+			foreach ($model as $item) {
+				$item->date = Yii::app()->dateFormatter->format('dd.MM.yyyy',$item->date);
+			}
+			$faq = Faq::model()->findAll();
 			$option = array( 
 				'new' => $new,
 				'model'=>$model,
 				'error' => $error,
+				'faq' => $faq,
 				'labels'=>User::attributeLabels()
 			);
 			if( !$partial ){

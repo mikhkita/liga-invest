@@ -1392,6 +1392,13 @@ input:-moz-placeholder {
   				margin-top: 10px;
   				margin-bottom: 10px;
   			}
+  			#accordion {
+  				width: 435px;
+  			}
+  			.ui-accordion .ui-accordion-content {
+  				padding: 15px;
+  				text-align: justify;
+  			}
 .map a{
 	padding: 0px !important;
 	margin: 0px !important;

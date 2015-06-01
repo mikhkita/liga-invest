@@ -9,11 +9,6 @@
 		<?php echo $form->errorSummary($model); ?>
 
 		<div class="row">
-			<?php echo $form->labelEx($model,'usr_middle_name'); ?>
-			<?php echo $form->textField($model,'usr_middle_name',array('maxlength'=>50)); ?>
-			<?php echo $form->error($model,'usr_middle_name'); ?>
-		</div>
-		<div class="row">
 			<?php echo $form->labelEx($model,'usr_passport_series'); ?>
 			<?php echo $form->textField($model,'usr_passport_series',array('maxlength'=>4)); ?>
 			<?php echo $form->error($model,'usr_passport_series'); ?>

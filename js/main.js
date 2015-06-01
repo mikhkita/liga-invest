@@ -83,6 +83,10 @@ $(document).ready(function(){
         maxWidth    : 800,
         maxHeight   : 600
     });
+
+    $( "#accordion" ).accordion({
+      heightStyle: "content"
+    });
     
 //     function copy_clip(meintext)
 // {
