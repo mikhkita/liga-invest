@@ -8,8 +8,6 @@
  * @property string $name
  * @property string $value
  * @property string $code
- * @property integer $sort
- * @property string $controller_code
  */
 class Settings extends CActiveRecord
 {
@@ -30,13 +28,12 @@ class Settings extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name, code', 'required'),
-			array('sort', 'numerical', 'integerOnly'=>true),
-			array('name, controller_code', 'length', 'max'=>255),
+			array('name', 'length', 'max'=>255),
 			array('code', 'length', 'max'=>50),
 			array('value', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, value, code, sort, controller_code', 'safe', 'on'=>'search'),
+			array('id, name, value, code', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,8 +58,6 @@ class Settings extends CActiveRecord
 			'name' => 'Параметр',
 			'value' => 'Значение',
 			'code' => 'Код',
-			'sort' => 'Сортировка',
-			'controller_code' => 'Контроллер',
 		);
 	}
 
@@ -88,8 +83,6 @@ class Settings extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('value',$this->value,true);
 		$criteria->compare('code',$this->code,true);
-		$criteria->compare('sort',$this->sort);
-		$criteria->compare('controller_code',$this->controller_code,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

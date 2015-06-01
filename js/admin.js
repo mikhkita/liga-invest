@@ -75,6 +75,7 @@ $(document).ready(function(){
 
         setTimeout(function(){
             bindFilter();
+            bindTooltip();
             bindAutocomplete();
         },100);
     }

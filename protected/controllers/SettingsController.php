@@ -29,6 +29,7 @@ class SettingsController extends Controller
 
 		if(isset($_POST['Settings']))
 		{
+			$_POST['Settings']['controller_code'] = "settings";
 			$model->attributes=$_POST['Settings'];
 			if($model->save()){
 				$this->actionAdminIndex(true);
@@ -76,7 +77,7 @@ class SettingsController extends Controller
 
         $criteria->order = 'sort ASC';
 
-        $criteria->condition = '!(code="INST_TITLE" OR code="INST_VIDEO")';
+        $criteria->condition = 'controller_code="settings"';
   
 		$model = Settings::model()->findAll($criteria);
 

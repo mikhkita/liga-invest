@@ -1,6 +1,6 @@
 <?php
 
-class InstructionController extends Controller
+class OfficeController extends Controller
 {
 	public function filters()
 	{
@@ -35,7 +35,7 @@ class InstructionController extends Controller
 
 		if(isset($_POST['Settings']))
 		{
-			$_POST['Settings']['controller_code'] = "instruction";
+			$_POST['Settings']['controller_code'] = "office";
 			$model->attributes=$_POST['Settings'];
 			if($model->save()){
 				$this->actionAdminIndex(true);
@@ -80,7 +80,7 @@ class InstructionController extends Controller
 		$criteria = new CDbCriteria();
 
         $criteria->order = 'sort ASC';
-        $criteria->condition = 'controller_code="instruction"';
+        $criteria->condition = 'controller_code="office"';
   
 		$model = Settings::model()->findAll($criteria);
 		$option = array(
@@ -100,7 +100,7 @@ class InstructionController extends Controller
 			$this->layout='site';
 		}
   		$criteria = new CDbCriteria();
-        $criteria->condition = 'controller_code="instruction"';
+        $criteria->condition = 'controller_code="office"';
 		$model = Settings::model()->findAll($criteria);
 		$option = array(
 			'data'=>$model,

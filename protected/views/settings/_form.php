@@ -14,6 +14,13 @@
 	</div>
 <? if( $this->getUserRole() == "root" ):  ?>
 	<div class="row">
+		<?php echo $form->labelEx($model,'sort'); ?>
+		<?php echo $form->textField($model,'sort',array('maxlength'=>255,'required'=>true)); ?>
+		<?php echo $form->error($model,'sort'); ?>
+	</div>
+<? endif; ?>
+<? if( $this->getUserRole() == "root" ):  ?>
+	<div class="row">
 		<?php echo $form->labelEx($model,'code'); ?>
 		<?php echo $form->textField($model,'code',array('maxlength'=>255,'required'=>true)); ?>
 		<?php echo $form->error($model,'code'); ?>
