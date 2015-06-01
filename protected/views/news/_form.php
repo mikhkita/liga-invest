@@ -20,7 +20,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'date'); ?>
-		<?php echo $form->textField($model,'date',array('maxlength'=>50,'required'=>true)); ?>
+		<?php echo $form->textField($model,'date',array('maxlength'=>10,'required'=>true,'class' => 'datepicker')); ?>
 		<?php echo $form->error($model,'date'); ?>
 	</div>
 	<div class="row buttons">

@@ -691,11 +691,11 @@ input:-moz-placeholder {
 					}
 	
 					.b-2 .pasport .data-text{
-						width: 90px;
+						width: 80px;
 					}
 	
 					.b-2 .pasport .data{
-						max-width: 52px;
+						max-width: 65px;
 					}
 	
 					.b-2 .pasport .cod{
@@ -703,7 +703,7 @@ input:-moz-placeholder {
 					}
 	
 					.b-2 .pasport .cod-text{
-						  width: 135px;
+						  width: 130px;
 					}
 
 				.b-2 .telephone{
@@ -1280,16 +1280,15 @@ input:-moz-placeholder {
 
 			.b-2 .news-more{
 				padding-top: 15px;
-				padding-bottom: 35px;
+				padding-bottom: 15px;
 			}
 
 				.b-2 .news-more p{
 					font-family: 'pf_bague_sans_prolight';
-	  				
-					font-size: 16px;
-	  				
+					font-size: 16px;	
 					line-height: 25px;
 					color: #52505e;
+					text-align: justify;
 				}
 	
 				.b-2 .news-more h4{
@@ -1302,6 +1301,16 @@ input:-moz-placeholder {
 	  				font-size: 15px;
 	  				color: #949494;
 	  				margin-bottom: 10px;
+				}
+				.b-2 .news-more a{
+					padding: 0px;
+ 					
+					margin-top: 10px;
+ 					
+					font-size: 15px;
+ 					text-decoration: underline;
+ 					color: #429ab8;
+ 					margin-bottom: 0px;
 				}
 				.b-2 .e-mail-password>div {
 					display: table;

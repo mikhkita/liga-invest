@@ -40,15 +40,16 @@ class NewsController extends Controller
 	public function actionAdminCreate()
 	{
 		$model=new News;
-
+		$model->date = date("d.m.Y");
 		if(isset($_POST['News']))
 		{
 			foreach ($_POST['News'] as &$value) {
 		    	$value = trim($value);
 			}
 			$program = News::model()->findByAttributes(array("name" =>$_POST['News']['name']));
-			if($program=="") {	
+			if($program=="") {
 				$model->attributes=$_POST['News'];
+				$model->date = date_format(date_create_from_format('d.m.Y',$_POST['News']['date']),'Y-m-d');
 				if($model->save()){
 					$this->actionAdminIndex(true);
 					return true;
@@ -68,16 +69,16 @@ class NewsController extends Controller
 	public function actionAdminUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$model->date = Yii::app()->dateFormatter->format('dd.MM.yyyy',$model->date);
 		if(isset($_POST['News']))
 		{
 			foreach ($_POST['News'] as &$value) {
 		    	$value = trim($value);
 			}
-
 			$program = News::model()->findByAttributes(array("name" =>$_POST['News']['name']));
-			if($program=="" || $_POST['News']['name']==$model->name) {	
+			if($program=="" || $_POST['News']['name']==$model->name) {				
 				$model->attributes=$_POST['News'];
+				$model->date = date_format(date_create_from_format('d.m.Y',$_POST['News']['date']),'Y-m-d');
 				if($model->save())
 					$this->actionAdminIndex(true);
 			} else {
@@ -121,10 +122,13 @@ class NewsController extends Controller
             }
         }
 
-        $criteria->order = 'name ASC';
+        $criteria->order = 'date DESC';
         $criteria->select = array('id','name','date');
 
 		$model = News::model()->findAll($criteria);
+		foreach ($model as $item) {
+			$item->date = Yii::app()->dateFormatter->format('dd.MM.yyyy',$item->date);
+		}
 		$option = array(
 			'data'=>$model,
 			'filter' => $filter,
@@ -144,10 +148,13 @@ class NewsController extends Controller
 		}
 
 		$criteria = new CDbCriteria();
-		$criteria->order = 'name ASC';
+		$criteria->order = 'date DESC';
 		$criteria->select = array('id','name','date');
 
 		$model = News::model()->findAll($criteria);
+		foreach ($model as $item) {
+			$item->date = Yii::app()->dateFormatter->format('dd.MM.yyyy',$item->date);
+		}
 		$option = array(
 			'model' => $model,
 			'labels'=>News::attributeLabels()
@@ -166,6 +173,7 @@ class NewsController extends Controller
 		}
 
 		$model = News::model()->findbyPk($id);
+		$model->date = Yii::app()->dateFormatter->format('dd.MM.yyyy',$model->date);
 		$option = array(
 			'model' => $model,
 			'labels'=>News::attributeLabels()

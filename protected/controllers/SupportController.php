@@ -108,7 +108,7 @@ class SupportController extends Controller
 
         $criteria->order = 'date DESC';
         
-		$model = Support::model()->findAll($criteria);
+		$model = Support::model()->with("user")->findAll($criteria);
 		$option = array(
 			'data'=>$model,
 			'filter' => $filter,
@@ -143,7 +143,7 @@ class SupportController extends Controller
 			$new->date = date("Y-m-d");
 			if(!$new->save()) header('Location: '.$this->createUrl('/support',array("error" => 'save')));
 		} else {
-			$option = array(
+			$option = array( 
 				'new' => $new,
 				'model'=>$model,
 				'error' => $error,

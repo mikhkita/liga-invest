@@ -9,7 +9,7 @@
 		</tr>
 		<tr class="b-filter">
 			<td><?php echo CHtml::activeTextField($filter, 'name'); ?></td>
-			<td><?php echo CHtml::activeTextField($filter, 'date'); ?></td>
+			<td><?php echo CHtml::activeTextField($filter, 'date',array('id'=> "News_datefilter")); ?></td>
 			<td><a href="#" class="b-clear-filter">Сбросить фильтр</a></td>
 		</tr>
 		<? if( count($data) ): ?>

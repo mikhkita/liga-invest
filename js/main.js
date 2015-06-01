@@ -11,8 +11,8 @@ $(document).ready(function(){
     // $(window).resize(resize);
     var rePhone = /^(?:\+\d \(\d{3}\) \d{3}\-\d{2}\-\d{2})?$/,
         tePhone = '+7 (999) 999-99-99',
-        reDate = /^(?:[0-3]\d\.[0-1]\d\.\d\d)?$/,
-        teDate = '99.99.99'; 
+        reDate = /^(?:[0-3]\d\.[0-1]\d\.\d\d\d\d)?$/,
+        teDate = '99.99.9999'; 
         
 
     $.validator.addMethod('customPhone', function (value) {

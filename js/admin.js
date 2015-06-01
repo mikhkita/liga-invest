@@ -131,10 +131,13 @@ $(document).ready(function(){
     function bindForm($form){
          var rePhone = /^(?:\+\d \(\d{3}\) \d{3}\-\d{2}\-\d{2})?$/,
             tePhone = '+7 (999) 999-99-99',
-            reDate = /^(?:[0-3]\d\.[0-1]\d\.\d\d)?$/,
-            teDate = '99.99.99'; 
-            
+            reDate = /^(?:[0-3]\d\.[0-1]\d\.\d\d\d\d)?$/,
+            teDate = '99.99.9999',
+            error = "Поле заполнено неверно"; 
 
+        $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
+        $( ".datepicker" ).datepicker(); 
+        
         $.validator.addMethod('customPhone', function (value) {
             return rePhone.test(value);
         });
@@ -146,6 +149,7 @@ $(document).ready(function(){
                     'User[usr_phone_number]': 'customPhone',
                     'User[usr_qiwi]': 'customPhone',
                     'User[usr_output_date]': 'customDate',
+                    'News[date]': 'customDate',
                     'User[usr_passport_series]': {
                         number: true
                     },
@@ -158,18 +162,19 @@ $(document).ready(function(){
                 },
                 messages: {
                     'User[usr_passport_series]': {
-                        number: "Поле заполнено неверно"
+                        number: error
                     },
                     'User[usr_yandex]': {
-                        number: "Поле заполнено неверно"
+                        number: error
                     },
                     'User[usr_passport_number]': {
-                        number: "Поле заполнено неверно"
+                        number: error
                     },
+                    'News[date]': error,
                 }
             });
                 $form.find("input[name='User[usr_phone_number]'],input[name='User[usr_qiwi]']").mask(tePhone,{placeholder:"_"});
-                $form.find("input[name='User[usr_output_date]']").mask(teDate,{placeholder:"_"});
+                $form.find("input[name='User[usr_output_date]'],input[name='News[date]']").mask(teDate,{placeholder:"_"});
                 $form.find("input[name='User[usr_unit_code]']").mask("999-999",{placeholder:"_"});
                 $form.find("input[name='User[usr_card]']").mask("9999 9999 9999 9999",{placeholder:"_"});
 

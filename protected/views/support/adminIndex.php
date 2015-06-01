@@ -9,7 +9,7 @@
 			<th style="width: 150px;">Действия</th>
 		</tr>
 		<tr class="b-filter">
-			<td><?php echo CHtml::activeTextField($filter, 'user_id'); ?></td>
+			<td></td>
 			<td><?php echo CHtml::activeTextField($filter, 'question'); ?></td>
 			<td><?php echo CHtml::activeTextField($filter, 'date'); ?></td>
 			<td><a href="#" class="b-clear-filter">Сбросить фильтр</a></td>
@@ -18,7 +18,7 @@
 			<? foreach ($data as $i => $item): ?>
 
 				<tr class="<? if( $item->answer ) echo 'complete' ?>">
-					<td class="align-left"><?=$item->user_id?></td>
+					<td class="align-left"><?=$item->user->usr_login?></td>
 					<td class="align-left"><?=$item->question?></td>
 					<td class="align-left"><?=$item->date?></td>
 					<td class="b-tool-cont">
