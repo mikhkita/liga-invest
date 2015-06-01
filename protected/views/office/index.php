@@ -1,13 +1,9 @@
 <h3><?=$this->getParam("OFFICE_TITLE")?></h3>
 <p class="agreement-p">
-	Вы выбрали способ инвестирования: через кассу в офисе компании.Средства <br>
-	инвестирования:10 000 рублей. <br>
-	Мы ждем Вас завтра в 10:00 утра  до 19:00 часов вечера.<br>
-	Напоминаем, что при себе необходимо иметь <br>
-	паспорт: ( серия и номер показывается) а так же оригиналы или копию ИНН.
+	<?=$this->getParam("OFFICE_DESCRIPTION",true)?>
 </p>
 <a href="#" class="green-button b-green right">Распечатать схему проезда</a>
-<div class="map" id="map_canvas"></div>
+<div class="map" id="map_canvas" data-coords="<?=$this->getParam("OFFICE_MAP",true)?>"></div>
 <div class="adress clearfix">
 	<div class="left">
 		<h4>Наш адрес:</h4>

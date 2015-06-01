@@ -27,7 +27,7 @@
 			<h6 class="left">Инвестор:</h6>
 			<h5><? echo $this->user->usr_name." ".$this->user->usr_surname ?></h5>
 		</div>
-		<a href="#" class="green-button green right">Инвестировать</a>
+		<a href="<?php echo $this->createUrl('/office/index')?>" class="green-button green right">Инвестировать</a>
 	</div>
 <?php $this->endWidget(); ?>
 <? foreach ($model as $item): ?>

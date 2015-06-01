@@ -96,6 +96,7 @@ class OfficeController extends Controller
 	
 	public function actionIndex($partial = false)
 	{
+		$this->globalScripts[] = 'http://maps.google.com/maps/api/js?sensor=false';
 		if( !$partial ){
 			$this->layout='site';
 		}
