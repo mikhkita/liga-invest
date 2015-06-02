@@ -81,7 +81,8 @@ $(document).ready(function(){
 
     $(".various").fancybox({
         maxWidth    : 800,
-        maxHeight   : 600
+        maxHeight   : 600,
+        padding: 0
     });
 
     $( "#accordion" ).accordion({

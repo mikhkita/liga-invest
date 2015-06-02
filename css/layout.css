@@ -133,8 +133,8 @@ input.disabled {
 	overflow: visible !important;
 }
 .fancybox-skin {
-	background-color: rgb(66, 154, 184);
-  	border-radius: 10px;
+	/*background-color: rgb(66, 154, 184);*/
+  	/*border-radius: 10px;*/
 }
 .fancybox-opened .fancybox-skin {
 	box-shadow: none;
@@ -899,7 +899,7 @@ input:-moz-placeholder {
 					font-size: 13px;
 					color: #808080;
 					font-family: 'pf_bague_sans_prolight';
-					margin-bottom: 20px;
+					margin-bottom: 25px;
 					text-align: justify;
 				}	
 
@@ -1369,6 +1369,8 @@ input:-moz-placeholder {
 				padding: 0;
 			}
 			.sup-fancy {
+				background-color: #FFF;
+				border-radius: 5px;
 				padding: 15px;
 			}
 			.sup-fancy h3 {
@@ -1388,9 +1390,9 @@ input:-moz-placeholder {
   				margin-bottom: 20px;
   			}
   			.sup-fancy .answer {
-  				color: white;
   				text-align: justify;
   				margin-top: 10px;
+  				color: #4d5056;
   				margin-bottom: 10px;
   			}
   			#accordion {
