@@ -133,7 +133,7 @@ input.disabled {
 	overflow: visible !important;
 }
 .fancybox-skin {
-	background-color: rgb(66, 154, 184);
+	background-color: #fff;
   	border-radius: 10px;
 }
 .fancybox-opened .fancybox-skin {
@@ -1388,7 +1388,7 @@ input:-moz-placeholder {
   				margin-bottom: 20px;
   			}
   			.sup-fancy .answer {
-  				color: white;
+  				color: #4a4857;
   				text-align: justify;
   				margin-top: 10px;
   				margin-bottom: 10px;
