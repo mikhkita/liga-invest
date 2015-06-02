@@ -83,7 +83,18 @@ $(document).ready(function(){
 
     var title = window.location.pathname;
     title = title.substr(1);
-    $("li[data-name='"+title+"']").addClass("active");
+    title1 = title.split('/');
+    if ($("li[data-second='"+title1[1]+"']").length) {
+        $("li[data-name='"+title1[0]+"']").addClass("active");
+    } else { 
+        $("li[data-name='"+title+"']").addClass("active");
+    }
+    if(title1[0]=="office") {
+        $("li[data-name='investition']").addClass("active");
+    }
+    
+    $("title").text("Лига-инвест - "+$(".b-menu").find("li.active").text());
+     $("#menu-position").text($(".b-menu").find("li.active").text());
 
     $("#check_agree").change(function(){
         if($("#check_agree").prop("checked")) {

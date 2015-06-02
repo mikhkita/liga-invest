@@ -223,7 +223,7 @@ input:-moz-placeholder {
 		width: 100%;
 		background: linear-gradient(to top, #297ea3, #4e9bba);
 		/* border-radius: 8px 8px 0px 0px; */
-		border-top: 2px solid #a2efff;
+		/*border-top: 2px solid #a2efff;*/
 	}
 
 	.b-2 .b-block{
@@ -869,8 +869,12 @@ input:-moz-placeholder {
   			display: table-cell;
 		}
 			.b-2 .history ul {
-				max-height: 700px;
-			}
+				max-height: 600px;
+				overflow: auto;
+				overflow-x: hidden; 
+			
+				width: 228px;
+}
 
 			.b-2 .history h6{
 				color: #4d5056;
@@ -881,7 +885,7 @@ input:-moz-placeholder {
 			}
 
 			.b-2 .history .message{
-				width: 188px;
+				width: auto;
 				min-height: 88px;
 				background-color: #fff;
 				border-radius: 5px;
@@ -892,12 +896,17 @@ input:-moz-placeholder {
 				text-align: left;
 				padding: 10px;
 				position: relative;
-			}
+			
+				margin-right: 8px;
+}
 				.b-answer{
 					position: absolute;
-  					width: 189px;
+  					
+					width: 100%;
   					bottom: 8px;
-				}
+				
+					padding-right: 0px;
+}
 				.b-2 .history p{
 					font-size: 13px;
 					color: #808080;
@@ -925,7 +934,9 @@ input:-moz-placeholder {
 					font-size: 10px;
 					margin-top: 33px;
 					color: #c1c6cc;
-				}
+				
+					margin-right: 18px;
+}
 
 				.b-2 .pay{
 					background-color: #dfe8ec;
