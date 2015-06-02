@@ -133,13 +133,10 @@ input.disabled {
 	overflow: visible !important;
 }
 .fancybox-skin {
-<<<<<<< HEAD
 	/*background-color: rgb(66, 154, 184);*/
   	/*border-radius: 10px;*/
-=======
 	background-color: #fff;
   	border-radius: 10px;
->>>>>>> 3830ea946311654a84074e4279c235886688a5be
 }
 .fancybox-opened .fancybox-skin {
 	box-shadow: none;
