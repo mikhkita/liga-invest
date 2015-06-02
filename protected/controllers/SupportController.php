@@ -144,7 +144,7 @@ class SupportController extends Controller
 		} else {
 			$criteria = new CDbCriteria();
 			$criteria->condition = 'user_id='.$user_id;
-	
+			$criteria->order = 'date DESC';
 			$model = Support::model()->findAll($criteria);
 			foreach ($model as $item) {
 				$item->date = Yii::app()->dateFormatter->format('dd.MM.yyyy',$item->date);

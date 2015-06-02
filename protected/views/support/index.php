@@ -26,7 +26,7 @@
 				<p><?=$this->replaceToBr(mb_substr($item->question,0,125))?> . . .</p>
 				<div class="clearfix b-answer">
 					<? if( $item->answer ): ?>
-						<a class="various fancybox.ajax check left" href="<?php echo Yii::app()->createUrl('/'.$this->adminMenu["cur"]->code.'/detail',array('id'=>$item->id))?>">ответ получен</a>
+						<a class="various fancybox.ajax check left green-button" href="<?php echo Yii::app()->createUrl('/'.$this->adminMenu["cur"]->code.'/detail',array('id'=>$item->id))?>">ответ получен</a>
 					<? else: ?>
 						<h5 class="wheit left">ожидание</h5>
 					<? endif; ?>
