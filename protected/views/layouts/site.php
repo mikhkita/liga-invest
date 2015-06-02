@@ -49,7 +49,7 @@
                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/i/blue-str.png">
                 </div>
             </div>
-            <div class="clearfix" style="display:table;">
+            <div class="clearfix b-table-cont">
                 <div class="menu-cont">
                     <ul class="b-menu">
                         <li class="clearfix b-menu-instruction" data-name="instruction"><a href="/instruction"><div class="b-menu-img"></div>Инструкция</a></li>                        

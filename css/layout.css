@@ -179,6 +179,7 @@ input:-moz-placeholder {
 		
 	}
 .b-1{
+    display: none;
 	
 }
 
@@ -221,14 +222,11 @@ input:-moz-placeholder {
 	.b-2 .header{
 		width: 100%;
 		background: linear-gradient(to top, #297ea3, #4e9bba);
-		border-radius: 8px 8px 0px 0px;
+		/* border-radius: 8px 8px 0px 0px; */
 		border-top: 2px solid #a2efff;
 	}
 
 	.b-2 .b-block{
-		border-radius: 8px;
-		box-shadow: 0px 10px 18px 5px #ccc;
-		margin-bottom: 30px;
 		overflow: hidden;
 	}
 
@@ -236,7 +234,10 @@ input:-moz-placeholder {
 			display: inline-block;
 			width: 218px;
 		}
-	
+			.b-2 .b-table-cont{
+				width: 941px;
+				display: table;
+			}
 			.b-2 .header .left img{
 				display: none;
 				float: left;
@@ -296,9 +297,10 @@ input:-moz-placeholder {
 			vertical-align: top;
 		}
 		.b-2 .b-menu{
- 			width: 219px;
+ 			width: 218px;
  			padding-top: 19px;
  			text-align: left;
+ 			border-left: 1px solid #429AB8;
 		}
 
 			.b-2 .b-menu li{
@@ -496,14 +498,13 @@ input:-moz-placeholder {
 			}
 				
 		.b-2 .content{
+			border-right: 1px solid #429AB8;
 			background-color: #fff;
 			width: 685px;
 			text-align: left;
 			padding: 16px 18px 17px 17px;
-			border-radius: 0px 0px 8px 0px;
 			display: table-cell;
 			vertical-align: top;
-
 		}
 
 			.b-2 .content h2{
